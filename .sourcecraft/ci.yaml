@@ -17,24 +17,11 @@ workflows:
     tasks:
       - name: build-task
         cubes:
-          # Шлюз: сборка разрешена только при наличии lock-файла
-          - name: check-lock
-            script:
-              - |
-                if [ -f pnpm-lock.yaml ]; then
-                  echo "BUILD_ALLOWED=true" >> $SOURCECRAFT_ENV
-                  echo "Lock file found: pnpm-lock.yaml — build allowed."
-                else
-                  echo "BUILD_ALLOWED=false" >> $SOURCECRAFT_ENV
-                  echo "Lock file NOT found — build skipped."
-                fi
-
-          # Установка зависимостей (патч применяется автоматически через
+          # Установка зависимостей (патч автора применяется автоматически через
           # pnpm.patchedDependencies), затем сборка статики.
           # Цепочка install -> patch -> build держится в одном кубике,
           # чтобы изменения в node_modules не потерялись.
           - name: install-and-build
-            if: contains(env.BUILD_ALLOWED, "true")
             image: node:24.5.0
             script:
               - corepack enable

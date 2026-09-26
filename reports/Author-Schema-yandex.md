@@ -1,6 +1,6 @@
 # Авторы — добавление схемы (реестр авторов, JSON-LD, скрипт new-author-post)
 
-> **Статус:** реализация выполнена (черновик — финальная коррекция за владельцем).
+> **Статус:** реализация выполнена + добавлены тестовые посты (черновик — финальная коррекция за владельцем).
 > **Ветка:** проектирование ведётся в ветке `main-qwen3`.
 
 ---
@@ -80,6 +80,20 @@
 | 7 | `src/layouts/Layout.astro` | Новые props: `postAuthors`, `authorsJsonLd`, `postDateISO`, `postContentPreview`; проброс в `Head` | ✅ изменён |
 | 8 | `src/layouts/Head.astro` | Блок JSON-LD `Article` (с `@id`, `text`, `author`/`sourceOrganization`, publisher) | ✅ изменён |
 | 9 | `package.json` | Новый скрипт `new-author-post` | ✅ изменён |
+
+### Тестовые посты (для проверки apply-lqip.ts и рендера авторов)
+
+| # | Файл | Автор(ы) | Проверяемый сценарий |
+|---|------|----------|---------------------|
+| T1 | `src/content/posts/bratskaya-mogila-frontovoe.md` | `tkachenko-s-n` + `redaktsiya` | персона + редакция (источник) |
+| T2 | `src/content/posts/bratskaya-mogila-korpech.md` | `naumenko-v-g` + `redaktsiya` | персона + редакция (цитата из книги) |
+| T3 | `src/content/posts/pamyat-ob-otce.md` | — (без `authorIds`) | пост без автора, мягкий резолв |
+| T4 | `src/content/posts/pulemetchica-nina-fateeva.md` | `redaktsiya` | только редакция (автор из индекса) |
+| T5 | `src/content/posts/maj-1942-ak-monaj-enikale.md` | `nevzorov-b-i` + `ak-monay` | персона (профессор) + сообщество (отряд) |
+| T6 | `src/content/posts/bratskaya-mogila-vladislavovka.md` | `kosova-a-m` | персона (координатор проекта) |
+| T7 | `src/content/posts/boi-za-krym-sbornik.md` | `rsl` | организация-библиотека (sourceOrganization) |
+
+Изображения — из `src/content/posts/_images/` (1–4 light/dark), без изменения имён (для проверки `apply-lqip.ts`).
 
 ## 6. Детали реализации
 
@@ -177,7 +191,7 @@ authorIds: z.array(z.string()).optional(),
 
 - Создан `scripts/new-author-post.ts` на базе `new-post.ts` с поддержкой `--authors="id1,id2"`.
 - Использование: `pnpm new-author-post <title> [--authors="id1,id2"]`.
-- При отсутствии `--authors` поле `authorIds` не добавля��тся (статья без автора).
+- При отсутствии `--authors` поле `authorIds` не добавляется (статья без автора).
 - В `package.json` добавлен скрипт: `"new-author-post": "tsx scripts/new-author-post.ts"`.
 - Остальные скрипты и зависимости не менялись.
 
@@ -194,7 +208,8 @@ authorIds: z.array(z.string()).optional(),
 | 7 | JSON-LD `Article` (Google + Яндекс) | `src/layouts/Head.astro` | Изменить | ✅ |
 | 8 | Скрипт создания поста с авторами | `scripts/new-author-post.ts` | Новый | ✅ |
 | 9 | Регистрация скрипта | `package.json` | Изменить | ✅ |
-| 10 | Проверка: `pnpm build` / `astro check` не ломают существующие страницы | — | Валидация | ⏳ за владельцем |
+| 10 | Тестовые посты (docs → md + _images) | `src/content/posts/*.md` | Новые | ✅ |
+| 11 | Проверка: `pnpm build` / `astro check` + `apply-lqip` | — | Валидация | ⏳ CI/CD |
 
 ## 9. Риски и правила безопасности
 
@@ -204,15 +219,17 @@ authorIds: z.array(z.string()).optional(),
 4. **YAML-гигиена**: даты и строки со спецсимволами в кавычках (валидный YAML 1.2). ✅
 5. **Обратная совместимость**: старые посты без `authorIds` продолжают работать (поле опционально). ✅
 
-> ⚠️ **Требует проверки сборкой (`pnpm build` / `astro check`):**
+> ⚠️ **Требует проверки сборкой (`pnpm build` / CI/CD):**
 > - коллекция `authors` через `glob` + `z.array(authorSchema)` — нужно убедиться, что Astro корректно читает YAML-массив как единую запись и валидирует элементы;
 > - типы `CollectionEntry<'authors'>` в `Layout.astro` и `[slug].astro`;
-> - поведение `astro check` с новым кодом.
+> - `apply-lqip.ts` должен корректно обработать изображения из тестовых постов.
 
 ## 10. Статусы и следующие шаги
 
 - [x] Согласован и заполнен список авторов для `authors.yaml` (подлинные + примеры)
 - [x] Выполнены пункты 1–9 чек-листа
-- [ ] Проверить сборку (`pnpm build` / `astro check`) — за владельцем (запуск команд вне моих полномочий)
+- [x] Созданы тестовые посты (docs → md + _images)
+- [ ] Запустить CI/CD workflow `build-retypeset` на ветке `main-qwen3` (вручную) или дождаться мержа в `master`
+- [ ] Проверить dist/ (apply-lqip) — за владельцем
 - [x] Раздел «Созданы и примеры и подлинные авторы» отчёта заполнен по факту
 - [ ] Финальная коррекция (при необходимости) и коммит в `main-qwen3` — за владельцем

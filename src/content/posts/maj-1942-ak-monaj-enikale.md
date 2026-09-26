@@ -7,9 +7,9 @@ tags:
   - Еникале
   - Керченский полуостров
   - "1942"
+draft: false
 toc: true
 lang: ru
-abbrlink: maj-1942-ak-monaj-enikale
 authorIds:
   - nevzorov-b-i
   - ak-monay

@@ -7,9 +7,9 @@ tags:
   - Великая Отечественная война
   - Сборник
   - РГБ
+draft: false
 toc: true
 lang: ru
-abbrlink: boi-za-krym-sbornik
 authorIds:
   - rsl
 ---

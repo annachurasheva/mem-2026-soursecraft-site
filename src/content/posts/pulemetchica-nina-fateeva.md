@@ -6,9 +6,9 @@ tags:
   - Память
   - Великая Отечественная война
   - Фатеева
+draft: true
 toc: false
 lang: ru
-abbrlink: pulemetchica-nina-fateeva
 authorIds:
   - redaktsiya
 ---

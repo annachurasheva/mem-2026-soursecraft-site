@@ -6,9 +6,9 @@ tags:
   - Память
   - Великая Отечественная война
   - Балобанов
+draft: true
 toc: false
 lang: ru
-abbrlink: pamyat-ob-otce
 ---
 
 Этот пост **без индексированного автора**.

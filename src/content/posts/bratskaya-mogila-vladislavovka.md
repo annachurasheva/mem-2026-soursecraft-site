@@ -6,9 +6,9 @@ tags:
   - Ак-Монай
   - Владиславовка
   - Братская могила
+draft: false
 toc: false
 lang: ru
-abbrlink: bratskaya-mogila-vladislavovka
 authorIds:
   - kosova-a-m
 ---

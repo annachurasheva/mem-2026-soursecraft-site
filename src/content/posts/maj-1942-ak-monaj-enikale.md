@@ -6,7 +6,7 @@ tags:
   - Ак-Монай
   - Еникале
   - Керченский полуостров
-  - 1942
+  - "1942"
 lang: ru
 abbrlink: maj-1942-ak-monaj-enikale
 authorIds:

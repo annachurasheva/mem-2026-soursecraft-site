@@ -1,8 +1,8 @@
 ---
-import type { Author } from '@/utils/author'
+import type { AuthorData } from '@/utils/author'
 
 interface Props {
-  authors: Author[]
+  authors: AuthorData[]
 }
 
 const { authors } = Astro.props
@@ -12,17 +12,10 @@ const { authors } = Astro.props
   <div class="post-authors mb-6 flex flex-wrap gap-4">
     {
       authors.map((author) => {
-        const { name, credentials, image, link, type, note } = author.data
-        const tag = link ? 'a' : 'span'
-        const href = link || undefined
-        return (
-          <tag
-            href={href}
-            class="author-card flex items-center gap-3 rounded-lg border border-default p-3 text-sm"
-            title={note || ''}
-            target={link?.startsWith('http') ? '_blank' : undefined}
-            rel={link?.startsWith('http') ? 'noopener noreferrer' : undefined}
-          >
+        const { name, credentials, image, link, type, note } = author
+        const isExternal = link?.startsWith('http')
+        const content = (
+          <>
             {image && (
               <img
                 src={image}
@@ -36,7 +29,25 @@ const { authors } = Astro.props
               {credentials && <span class="text-xs c-secondary">{credentials}</span>}
               {type && <span class="text-xs uppercase tracking-wide c-tertiary">{type}</span>}
             </div>
-          </tag>
+          </>
+        )
+        return link ? (
+          <a
+            href={link}
+            class="author-card flex items-center gap-3 rounded-lg border border-default p-3 text-sm"
+            title={note || ''}
+            target={isExternal ? '_blank' : undefined}
+            rel={isExternal ? 'noopener noreferrer' : undefined}
+          >
+            {content}
+          </a>
+        ) : (
+          <span
+            class="author-card flex items-center gap-3 rounded-lg border border-default p-3 text-sm"
+            title={note || ''}
+          >
+            {content}
+          </span>
         )
       })
     }

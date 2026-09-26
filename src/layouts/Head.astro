@@ -97,6 +97,7 @@ const pageImage = postSlug
 <!-- JSON-LD Article (Schema.org; includes Yandex.Metrica requirements) -->
 {postTitle && (
   <script
+    is:inline
     type="application/ld+json"
     set:html={JSON.stringify({
       '@context': 'https://schema.org',

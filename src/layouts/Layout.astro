@@ -1,5 +1,4 @@
 ---
-import type { CollectionEntry } from 'astro:content'
 import type { Language } from '@/i18n/config'
 import Button from '@/components/Button.astro'
 import Footer from '@/components/Footer.astro'
@@ -26,7 +25,6 @@ interface Props {
   postDescription?: string
   postSlug?: string
   supportedLangs?: Language[]
-  postAuthors?: CollectionEntry<'authors'>[]
   authorsJsonLd?: { author?: object[], sourceOrganization?: object[] }
   postDateISO?: string
   postContentPreview?: string
@@ -37,7 +35,6 @@ const {
   postDescription,
   postSlug,
   supportedLangs = [],
-  postAuthors = [],
   authorsJsonLd = {},
   postDateISO,
   postContentPreview,

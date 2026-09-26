@@ -6,6 +6,7 @@ tags:
   - Ак-Монай
   - Фронтовое
   - Братская могила
+toc: false
 lang: ru
 abbrlink: bratskaya-mogila-frontovoe
 authorIds:

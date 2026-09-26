@@ -6,6 +6,7 @@ tags:
   - Память
   - Великая Отечественная война
   - Фатеева
+toc: false
 lang: ru
 abbrlink: pulemetchica-nina-fateeva
 authorIds:

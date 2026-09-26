@@ -6,6 +6,7 @@ tags:
   - Ак-Монай
   - Корпечь
   - Братская могила
+toc: false
 lang: ru
 abbrlink: bratskaya-mogila-korpech
 authorIds:

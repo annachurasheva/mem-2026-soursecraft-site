@@ -6,6 +6,7 @@ tags:
   - Память
   - Великая Отечественная война
   - Балобанов
+toc: false
 lang: ru
 abbrlink: pamyat-ob-otce
 ---

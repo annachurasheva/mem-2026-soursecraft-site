@@ -1,0 +1,336 @@
+# ============================================================
+# РЕЕСТР АВТОРОВ И ИСТОЧНИКОВ
+# Единый источник данных для карточек авторов и JSON-LD (Schema.org)
+# Типы: персона | библиотека | сообщество | организация | редакция | источник
+# Правила:
+#   - даты и строки со спецсимволами заключаются в кавычки (валидный YAML 1.2)
+#   - пустые значения записываются как '' или []
+# ============================================================
+
+# ------------------------------------------------------------
+# ПОДЛИННЫЕ ЗАПИСИ (реальные авторы, организации, источники)
+# ------------------------------------------------------------
+
+# --- Редакция: интернет-издание Bospor.com.ua (2008) ---
+- id: redaktsiya
+  name: Редакция (интернет-издание Bospor.com.ua)
+  type: редакция
+  credentials: ''
+  access: публичный
+  license_note: ''
+  link: http://www.bospor.com.ua
+  note: интернет-издание; материалы 2008 года
+  url: http://www.bospor.com.ua
+  sameAs: []
+  image: ''
+  jobTitle: ''
+  affiliation: ''
+  schema_type: Organization
+  legal_name: ''
+  alternate_name: []
+  founding_date: ''
+  dissolution_date: ''
+  successor: ''
+  predecessor: []
+  parent_organization: ''
+  location: ''
+
+# --- Персона: Борис Ильич Невзоров ---
+- id: nevzorov-b-i
+  name: Невзоров Борис Ильич
+  type: персона
+  credentials: кандидат исторических наук, доцент, Почетный профессор Европейского Университета, полковник в отставке
+  access: публичный
+  license_note: ''
+  link: ''
+  note: 'г.р. 1926; автор военно-исторического очерка «Московская битва 1941–1942» (Москва, 2006)'
+  url: ''
+  sameAs: []
+  image: ''
+  jobTitle: доцент
+  affiliation: Европейский Университет
+  schema_type: Person
+  legal_name: ''
+  alternate_name: []
+  founding_date: ''
+  dissolution_date: ''
+  successor: ''
+  predecessor: []
+  parent_organization: ''
+  location: ''
+
+# --- Сообщество: Поисковый отряд «Ак-Монай» (Феодосия) ---
+- id: ak-monay
+  name: Поисковый отряд «Ак-Монай»
+  type: сообщество
+  credentials: ''
+  access: публичный
+  license_note: ''
+  link: https://vk.ru/akmonai
+  note: 'поисковый отряд, Феодосия; руководитель — Кирилл Синдерович'
+  url: https://vk.ru/akmonai
+  sameAs:
+    - https://vk.ru/akmonai
+  image: ''
+  jobTitle: ''
+  affiliation: ''
+  schema_type: Organization
+  legal_name: ''
+  alternate_name: []
+  founding_date: ''
+  dissolution_date: ''
+  successor: ''
+  predecessor: []
+  parent_organization: ''
+  location: Феодосия
+
+# --- Персона: Кирилл Синдерович (руководитель отряда) ---
+- id: sinderovich-kirill
+  name: Синдерович Кирилл
+  type: персона
+  credentials: ''
+  access: публичный
+  license_note: ''
+  link: https://vk.ru/id32202743
+  note: руководитель поискового отряда «Ак-Монай»
+  url: https://vk.ru/id32202743
+  sameAs:
+    - https://vk.ru/id32202743
+  image: ''
+  jobTitle: руководитель поискового отряда
+  affiliation: Поисковый отряд «Ак-Монай»
+  schema_type: Person
+  legal_name: ''
+  alternate_name: []
+  founding_date: ''
+  dissolution_date: ''
+  successor: ''
+  predecessor: []
+  parent_organization: ''
+  location: ''
+
+# --- Библиотека: Национальная электронная библиотека (НЭБ) ---
+- id: neb
+  name: Национальная электронная библиотека (НЭБ)
+  type: библиотека
+  credentials: ''
+  access: публичный
+  license_note: ''
+  link: https://rusneb.ru
+  note: 'источник: документ «Московская битва 1941–1942 : военно-ист. очерк», автор — Невзоров Б.И., опубликован в 2006 году, Москва'
+  url: https://rusneb.ru
+  sameAs: []
+  image: ''
+  jobTitle: ''
+  affiliation: ''
+  schema_type: Library
+  legal_name: ''
+  alternate_name: []
+  founding_date: ''
+  dissolution_date: ''
+  successor: ''
+  predecessor: []
+  parent_organization: ''
+  location: ''
+
+# --- Персона: Валентина Георгиевна Науменко ---
+- id: naumenko-v-g
+  name: Науменко Валентина Георгиевна
+  type: персона
+  credentials: историк, профессор
+  access: публичный
+  license_note: ''
+  link: ''
+  note: 'автор книги «Просто фронт. О морском десанте у феодосийских берегов» (Москва, «Прометей», 2006)'
+  url: ''
+  sameAs: []
+  image: ''
+  jobTitle: профессор
+  affiliation: ''
+  schema_type: Person
+  legal_name: ''
+  alternate_name: []
+  founding_date: ''
+  dissolution_date: ''
+  successor: ''
+  predecessor: []
+  parent_organization: ''
+  location: ''
+
+# --- Организация: АО «Информационная компания "Кодекс"» ---
+- id: kodeks
+  name: Информационная компания «Кодекс»
+  type: организация
+  credentials: ''
+  access: публичный
+  license_note: ''
+  link: https://kodeks.ru
+  note: 'Электронный фонд правовых и нормативно-технических документов; e-mail: spp@kodeks.ru'
+  url: https://kodeks.ru
+  sameAs: []
+  image: ''
+  jobTitle: ''
+  affiliation: ''
+  schema_type: Organization
+  legal_name: Акционерное общество «Информационная компания "Кодекс"»
+  alternate_name:
+    - Кодекс
+    - kodeks.ru
+  founding_date: ''
+  dissolution_date: ''
+  successor: ''
+  predecessor: []
+  parent_organization: ''
+  location: '199004, Санкт-Петербург, Средний пр. В.О. д. 36/40, лит. А'
+
+# --- Персона: С.Н. Ткаченко (крымский военный историк) ---
+- id: tkachenko-s-n
+  name: Ткаченко С.Н.
+  type: персона
+  credentials: крымский военный историк
+  access: публичный
+  license_note: ''
+  link: ''
+  note: 'автор монографии «Хроника и военно-исторические очерки» (Симферополь, ИП Бровко А.А., 2018, 460 с., ISBN 978-5-6041129-1-5)'
+  url: ''
+  sameAs: []
+  image: ''
+  jobTitle: военный историк
+  affiliation: ''
+  schema_type: Person
+  legal_name: ''
+  alternate_name: []
+  founding_date: ''
+  dissolution_date: ''
+  successor: ''
+  predecessor: []
+  parent_organization: ''
+  location: ''
+
+# --- Персона: Анна Михайловна Косова ---
+- id: kosova-a-m
+  name: Косова Анна Михайловна
+  type: персона
+  credentials: координатор проекта «Крымский виртуальный некрополь»
+  access: публичный
+  license_note: ''
+  link: ''
+  note: 'г. Севастополь; род занятий — транспорт, логистика; e-mail: xdonatos@rambler.ru; тел.: +7 (978) 032-40-74'
+  url: ''
+  sameAs: []
+  image: ''
+  jobTitle: координатор проекта «Крымский виртуальный некрополь»
+  affiliation: Проект «Крымский виртуальный некрополь»
+  schema_type: Person
+  legal_name: ''
+  alternate_name: []
+  founding_date: ''
+  dissolution_date: ''
+  successor: ''
+  predecessor: []
+  parent_organization: ''
+  location: Севастополь
+
+# ------------------------------------------------------------
+# ПРИМЕРЫ-ШАБЛОНЫ (образцы заполнения для каждой секции)
+# ------------------------------------------------------------
+
+# --- Пример-шаблон: персона (Ху Ши) ---
+- id: hu-shi
+  name: Ху Ши
+  type: персона
+  credentials: ''
+  access: публичный
+  license_note: ''
+  link: ''
+  note: 'ПРИМЕР-ШАБЛОН: образец заполнения персоны'
+  url: ''
+  sameAs: []
+  image: ''
+  jobTitle: ''
+  affiliation: ''
+  schema_type: Person
+  legal_name: ''
+  alternate_name: []
+  founding_date: ''
+  dissolution_date: ''
+  successor: ''
+  predecessor: []
+  parent_organization: ''
+  location: ''
+
+# --- Пример-шаблон: библиотека (Российская государственная библиотека) ---
+- id: rsl
+  name: Российская государственная библиотека
+  type: библиотека
+  credentials: ''
+  access: публичный
+  license_note: 'материал публичен; условия лицензии сверены по карточке каталога'
+  link: /poiskoviki/
+  note: 'ПРИМЕР-ШАБЛОН: образец заполнения библиотеки; источник справочных материалов'
+  url: https://www.rsl.ru
+  sameAs:
+    - https://ru.wikipedia.org/wiki/Российская_государственная_библиотека
+  image: ''
+  jobTitle: ''
+  affiliation: ''
+  schema_type: Library
+  legal_name: ''
+  alternate_name:
+    - РГБ
+  founding_date: '1862-07-01'
+  dissolution_date: ''
+  successor: ''
+  predecessor: []
+  parent_organization: ''
+  location: Москва, Россия
+
+# --- Пример-шаблон: организация (расформированный НИИ) ---
+- id: nii-istorii-sssr
+  name: Институт истории СССР АН СССР
+  type: организация
+  credentials: ''
+  access: архивный
+  license_note: 'материалы из фондов ЦА РАН, статус публичный'
+  link: /poiskoviki/
+  note: 'ПРИМЕР-ШАБЛОН: образец заполнения организации (историческая, расформирована); расформирован в 1992, материалы переданы в ИРИ РАН'
+  url: ''
+  sameAs:
+    - https://ru.wikipedia.org/wiki/Институт_истории_СССР
+  image: ''
+  jobTitle: ''
+  affiliation: ''
+  schema_type: ResearchOrganization
+  legal_name: Институт истории СССР Академии наук СССР
+  alternate_name:
+    - ИИ СССР
+  founding_date: '1936-01-01'
+  dissolution_date: '1992-12-31'
+  successor: ''
+  predecessor: []
+  parent_organization: Академия наук СССР
+  location: Москва, СССР
+
+# --- Пример-шаблон: источник (интернет-издание «по материалам») ---
+- id: xxx-2008
+  name: Интернет-издание «ХХХХ»
+  type: источник
+  credentials: ''
+  access: публичный
+  license_note: материал публичен
+  link: https://xxxx.example.com
+  note: 'ПРИМЕР-ШАБЛОН: образец заполнения источника; материалы 2008 года'
+  url: https://xxxx.example.com
+  sameAs: []
+  image: ''
+  jobTitle: ''
+  affiliation: ''
+  schema_type: Organization
+  legal_name: ''
+  alternate_name: []
+  founding_date: ''
+  dissolution_date: ''
+  successor: ''
+  predecessor: []
+  parent_organization: ''
+  location: ''

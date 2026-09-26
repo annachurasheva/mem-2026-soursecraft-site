@@ -1,0 +1,44 @@
+---
+import type { Author } from '@/utils/author'
+
+interface Props {
+  authors: Author[]
+}
+
+const { authors } = Astro.props
+---
+
+{authors.length > 0 && (
+  <div class="post-authors mb-6 flex flex-wrap gap-4">
+    {
+      authors.map((author) => {
+        const { name, credentials, image, link, type, note } = author.data
+        const tag = link ? 'a' : 'span'
+        const href = link || undefined
+        return (
+          <tag
+            href={href}
+            class="author-card flex items-center gap-3 rounded-lg border border-default p-3 text-sm"
+            title={note || ''}
+            target={link?.startsWith('http') ? '_blank' : undefined}
+            rel={link?.startsWith('http') ? 'noopener noreferrer' : undefined}
+          >
+            {image && (
+              <img
+                src={image}
+                alt={name}
+                class="h-12 w-12 rounded-full object-cover"
+                loading="lazy"
+              />
+            )}
+            <div class="flex flex-col">
+              <span class="font-semibold c-primary">{name}</span>
+              {credentials && <span class="text-xs c-secondary">{credentials}</span>}
+              {type && <span class="text-xs uppercase tracking-wide c-tertiary">{type}</span>}
+            </div>
+          </tag>
+        )
+      })
+    }
+  </div>
+)}

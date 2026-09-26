@@ -9,10 +9,20 @@ interface Props {
   postTitle?: string
   postDescription?: string
   postSlug?: string
+  authorsJsonLd?: { author?: object[], sourceOrganization?: object[] }
+  postDateISO?: string
+  postContentPreview?: string
 }
 
 // Props and Language
-const { postTitle, postDescription, postSlug } = Astro.props
+const {
+  postTitle,
+  postDescription,
+  postSlug,
+  authorsJsonLd = {},
+  postDateISO,
+  postContentPreview,
+} = Astro.props
 const { currentLang } = getPageInfo(Astro.url.pathname)
 const currentUI = ui[currentLang as keyof typeof ui] ?? {}
 const lang = currentLang === defaultLocale ? '' : `${currentLang}/`
@@ -83,6 +93,43 @@ const pageImage = postSlug
 <meta property="og:image" content={pageImage} />
 <meta name="twitter:card" content="summary_large_image" />
 {twitterID && <meta name="twitter:site" content={twitterID} />}
+
+<!-- JSON-LD Article (Schema.org; includes Yandex.Metrica requirements) -->
+{postTitle && (
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      // Required by Yandex.Metrica
+      '@id': Astro.url.href,
+      headline: postTitle,
+      description: pageDescription,
+      image: pageImage,
+      datePublished: postDateISO,
+      url: Astro.url.href,
+      // Required by Yandex.Metrica: text >= 500 chars
+      ...(postContentPreview && postContentPreview.length >= 500
+        ? { text: postContentPreview }
+        : {}),
+      // Author (persons) and source organization (organizations)
+      ...(authorsJsonLd.author?.length ? { author: authorsJsonLd.author } : {}),
+      ...(authorsJsonLd.sourceOrganization?.length ? { sourceOrganization: authorsJsonLd.sourceOrganization } : {}),
+      publisher: {
+        '@type': 'Organization',
+        name: siteTitle,
+        logo: {
+          '@type': 'ImageObject',
+          url: `${Astro.url.origin}${base}${favicon}`,
+        },
+      },
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': Astro.url.href,
+      },
+    })}
+  />
+)}
 
 <!-- Site Verification -->
 {google && <meta name="google-site-verification" content={google} />}

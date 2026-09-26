@@ -4,6 +4,7 @@ import type { Language } from '@/i18n/config'
 import { getCollection, render } from 'astro:content'
 import Comment from '@/components/Comment/Index.astro'
 import PostDate from '@/components/PostDate.astro'
+import PostAuthor from '@/components/PostAuthor.astro'
 import TagList from '@/components/TagList.astro'
 import BackButton from '@/components/Widgets/BackButton.astro'
 import TOC from '@/components/Widgets/TOC.astro'
@@ -12,6 +13,7 @@ import { getLangFromLocale, getLangRouteParam } from '@/i18n/lang'
 import Layout from '@/layouts/Layout.astro'
 import { checkPostSlugDuplication } from '@/utils/content'
 import { getPostDescription } from '@/utils/description'
+import { resolveAuthors, buildAuthorsJsonLdBlock } from '@/utils/author'
 
 export async function getStaticPaths() {
   const posts: CollectionEntry<'posts'>[] = await getCollection('posts')
@@ -22,7 +24,7 @@ export async function getStaticPaths() {
     throw new Error(`Duplicate post slugs:\n${duplicates.join('\n')}`)
   }
 
-  // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   // Build a map of post slugs to their supported languages
   // Handles both specific language posts (e.g., 'en') and universal posts (lang: '')
   const slugToLangsMap = new Map<string, Set<Language>>()
@@ -51,7 +53,7 @@ export async function getStaticPaths() {
   for (const [slug, langs] of slugToLangsMap) {
     slugToLangs[slug] = [...langs].sort((a, b) => allLocales.indexOf(a) - allLocales.indexOf(b))
   }
-  // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
   return allLocales.flatMap(lang => posts
     // Show drafts in dev mode only
@@ -78,6 +80,20 @@ const currentLang = getLangFromLocale(Astro.currentLocale)
 const slug = post.data.abbrlink || post.id
 const description = getPostDescription(post, 'meta')
 const { Content, headings, remarkPluginFrontmatter } = await render(post)
+
+// Authors (soft resolve; empty array = no author card and no author in JSON-LD)
+const authors = await resolveAuthors(post.data.authorIds)
+const authorsJsonLdBlock = buildAuthorsJsonLdBlock(authors)
+const postDateISO = post.data.published.toISOString()
+
+// Content preview for Yandex.Metrica (>= 500 chars)
+const postContentPreview = (post.body || '')
+  .replace(/```[\s\S]*?```/g, ' ') // Remove code blocks
+  .replace(/<!--[\s\S]*?-->/g, ' ') // Remove HTML comments
+  .replace(/[#*_\[\]`>]/g, ' ') // Remove markdown symbols
+  .replace(/\s+/g, ' ')
+  .trim()
+  .slice(0, 1000)
 ---
 
 <Layout
@@ -85,6 +101,10 @@ const { Content, headings, remarkPluginFrontmatter } = await render(post)
   postDescription={description}
   postSlug={post.id}
   supportedLangs={supportedLangs}
+  postAuthors={authors}
+  authorsJsonLd={authorsJsonLdBlock}
+  postDateISO={postDateISO}
+  postContentPreview={postContentPreview}
 >
   <article class="heti">
     <div class="relative">
@@ -114,6 +134,8 @@ const { Content, headings, remarkPluginFrontmatter } = await render(post)
         minutes={remarkPluginFrontmatter.minutes}
       />
     </div>
+    <!-- Author Card (only if authors exist) -->
+    {authors.length > 0 && <PostAuthor authors={authors} />}
     <!-- TOC -->
     {post.data.toc && <TOC headings={headings} />}
     <!-- Content -->

@@ -166,19 +166,6 @@ lite-youtube > .lty-playbtn {
   --at-apply: 'aspect-video min-h-75 w-full';
 }
 
-/* Mermaid */
-pre.mermaid svg {
-  --at-apply: 'mx-auto';
-}
-
-/* KaTeX Overflow Fix */
-.katex-display {
-  --at-apply: 'my-6 overflow-x-auto overflow-y-hidden scrollbar-hidden';
-}
-.katex-display::-webkit-scrollbar {
-  display: none;
-}
-
 /* TOC >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 #toc-mobile-text {
   --at-apply: 'ml-4 font-semibold 2xl:hidden';

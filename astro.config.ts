@@ -3,11 +3,8 @@ import partytown from '@astrojs/partytown'
 import sitemap from '@astrojs/sitemap'
 import Compress from 'astro-compress'
 import { defineConfig } from 'astro/config'
-import rehypeKatex from 'rehype-katex'
-import rehypeMermaid from 'rehype-mermaid'
 import rehypeSlug from 'rehype-slug'
 import remarkDirective from 'remark-directive'
-import remarkMath from 'remark-math'
 import UnoCSS from 'unocss/astro'
 import { base, defaultLocale, themeConfig } from './src/config'
 import { langMap } from './src/i18n/config'
@@ -63,14 +60,11 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [
       remarkDirective,
-      remarkMath,
       remarkContainerDirectives,
       remarkLeafDirectives,
       remarkReadingTime,
     ],
     rehypePlugins: [
-      rehypeKatex,
-      [rehypeMermaid, { strategy: 'pre-mermaid' }],
       rehypeSlug,
       rehypeHeadingAnchor,
       rehypeImageProcessor,

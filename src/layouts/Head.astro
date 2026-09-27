@@ -1,6 +1,5 @@
 ---
 import { ClientRouter } from 'astro:transitions'
-import katexCSS from 'katex/dist/katex.min.css?url'
 import { allLocales, base, defaultLocale, themeConfig } from '@/config'
 import { ui } from '@/i18n/ui'
 import { getPageInfo } from '@/utils/page'
@@ -30,7 +29,7 @@ const lang = currentLang === defaultLocale ? '' : `${currentLang}/`
 // Site Configuration
 const { title, subtitle, description, i18nTitle, author, favicon } = themeConfig.site
 const { mode: defaultMode, light: { background: lightMode }, dark: { background: darkMode } } = themeConfig.color
-const { katex: katexEnabled, reduceMotion } = themeConfig.global
+const { reduceMotion } = themeConfig.global
 const { verification = {}, twitterID = '', googleAnalyticsID = '', umamiAnalyticsID = '', apiflashKey = '' } = themeConfig.seo ?? {}
 const { google = '', bing = '', yandex = '', baidu = '' } = verification
 const { customGoogleAnalyticsJS = '', customUmamiAnalyticsJS = '' } = themeConfig.preload ?? {}
@@ -70,7 +69,6 @@ const pageImage = postSlug
 <link rel="preload" href={`${base}/fonts/Snell-Bold-SF.woff2`} as="font" type="font/woff2" crossorigin />
 <link rel="preload" href={`${base}/fonts/STIX-VF.woff2`} as="font" type="font/woff2" crossorigin />
 <link rel="preload" href={`${base}/fonts/STIX-Italic-VF.woff2`} as="font" type="font/woff2" crossorigin />
-{katexEnabled && <link rel="stylesheet" href={katexCSS} media="print" onload={`this.media='all'`} />}
 
 <!-- Site Links -->
 <link rel="canonical" href={Astro.url} />
@@ -248,4 +246,39 @@ const pageImage = postSlug
     data-website-id={umamiAnalyticsID}
   />
 )}
+
+<!-- Yandex.Metrika counter (счётчик 109911463) -->
+<script is:inline>
+(function (m, e, t, r, i, k, a) {
+  m[i] = m[i] || function (...args) {
+    (m[i].a = m[i].a || []).push(...args)
+  }
+  m[i].l = 1 * new Date()
+  for (let j = 0; j < document.scripts.length; j++) {
+    if (document.scripts[j].src === r) {
+      return
+    }
+  }
+  k = e.createElement(t)
+  a = e.getElementsByTagName(t)[0]
+  k.async = 1
+  k.src = r
+  a.parentNode.insertBefore(k, a)
+})(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=109911463', 'ym')
+ym(109911463, 'init', {
+  ssr: true,
+  webvisor: true,
+  clickmap: true,
+  ecommerce: 'dataLayer',
+  referrer: document.referrer,
+  url: location.href,
+  accurateTrackBounce: true,
+  trackLinks: true,
+})
+</script>
+<noscript>
+  <div><img src="https://mc.yandex.ru/watch/109911463" style="position:absolute; left:-9999px;" alt="" /></div>
+</noscript>
+<!-- /Yandex.Metrika counter -->
+
 </head>

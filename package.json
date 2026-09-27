@@ -1,9 +1,9 @@
 {
-  "name": "astro-theme-retypeset",
+  "name": "memorial-korpech-crimea",
   "type": "module",
   "version": "1.0.0",
   "packageManager": "pnpm@10.33.0",
-  "repository": "https://github.com/radishzzz/astro-theme-retypeset",
+  "repository": "https://github.com/annachurasheva/memorial-korpech-crimea",
   "scripts": {
     "dev": "astro check && astro dev",
     "build": "astro check && astro build && pnpm apply-lqip",

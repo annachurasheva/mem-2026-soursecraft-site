@@ -1,0 +1,82 @@
+12:15:24 [200] /tags/ 15ms
+12:15:24 [200] /about/ 14ms
+12:15:24 [200] /atom.xml/ 10ms
+12:15:24 [200] /en/ 25ms
+12:15:38 [200] /es/ 8ms
+12:15:38 [200] /es/about/ 13ms
+12:15:38 [200] /es/atom.xml/ 4ms
+12:15:38 [200] /ja/tags/ 40ms
+12:16:28 [200] /ru/posts/bratskaya-mogila-korpech/ 87ms
+12:16:44 [200] /ru/about/ 9ms
+12:16:44 [WARN] [vite] Sourcemap for "C:/astro-projects/astro-theme-retypeset/node_modules/.pnpm/@waline+client@3.13.0_typescript@6.0.2/node_modules/@waline/client/dist/waline.css" points to missing source files
+12:16:44 [WARN] [router] A `getStaticPaths()` route pattern was matched, but no matching static path was found for requested path `/ru/posts/bratskaya-mogila-korpech/index.html/`.
+
+Possible dynamic routes being matched: src/pages/[...lang]/index.astro.
+12:16:44 [404] /ru/posts/bratskaya-mogila-korpech/index.html/ 19ms
+12:16:45 [200] /_image/ 1455ms
+12:16:45 [200] /ru/atom.xml/ 703ms
+12:16:46 [200] /_image/ 3046ms
+12:17:55 [ERROR] Failed to parse image reference: {&#x22;inferSize&#x22;:true,&#x22;src&#x22;:&#x22;https://image.radishzz.cc/image/gallery/sheep-1.jpg&#x22;,&#x22;alt&#x22;:&#x22;Альпака&#x22;,&#x22;index&#x22;:0}
+  Stack trace:
+    at updateImageReferencesInBody (C:\astro-projects\astro-theme-retypeset\node_modules\.pnpm\astro@6.1.5_@types+node@25._6d0c47d141c1ea47b78a1edce0d9f0d9\node_modules\astro\dist\content\runtime.js:338:13)
+    [...] See full stack trace in the browser, or rerun with --verbose.
+12:17:55 [ERROR] Failed to parse image reference: {&#x22;inferSize&#x22;:true,&#x22;src&#x22;:&#x22;https://image.radishzz.cc/image/gallery/sheep-1.jpg&#x22;,&#x22;alt&#x22;:&#x22;Альпака&#x22;,&#x22;index&#x22;:0}
+  Stack trace:
+    at updateImageReferencesInBody (C:\astro-projects\astro-theme-retypeset\node_modules\.pnpm\astro@6.1.5_@types+node@25._6d0c47d141c1ea47b78a1edce0d9f0d9\node_modules\astro\dist\content\runtime.js:338:13)
+    at async renderEntry (C:\astro-projects\astro-theme-retypeset\node_modules\.pnpm\astro@6.1.5_@types+node@25._6d0c47d141c1ea47b78a1edce0d9f0d9\node_modules\astro\dist\content\runtime.js:396:82)
+    at async Promise.all (index 8)
+12:17:55 [ERROR] Failed to parse image reference: {&#x22;inferSize&#x22;:true,&#x22;src&#x22;:&#x22;https://image.radishzz.cc/image/gallery/sheep-1.jpg&#x22;,&#x22;alt&#x22;:&#x22;Альпака&#x22;,&#x22;index&#x22;:0}
+  Stack trace:
+    at updateImageReferencesInBody (C:\astro-projects\astro-theme-retypeset\node_modules\.pnpm\astro@6.1.5_@types+node@25._6d0c47d141c1ea47b78a1edce0d9f0d9\node_modules\astro\dist\content\runtime.js:338:13)
+    at async renderEntry (C:\astro-projects\astro-theme-retypeset\node_modules\.pnpm\astro@6.1.5_@types+node@25._6d0c47d141c1ea47b78a1edce0d9f0d9\node_modules\astro\dist\content\runtime.js:396:82)
+    at async Promise.all (index 8)
+12:17:55 [ERROR] Error: Failed to parse image reference: {&#x22;inferSize&#x22;:true,&#x22;src&#x22;:&#x22;https://image.radishzz.cc/image/gallery/sheep-1.jpg&#x22;,&#x22;alt&#x22;:&#x22;Альпака&#x22;,&#x22;index&#x22;:0}
+    at updateImageReferencesInBody (C:\astro-projects\astro-theme-retypeset\node_modules\.pnpm\astro@6.1.5_@types+node@25._6d0c47d141c1ea47b78a1edce0d9f0d9\node_modules\astro\dist\content\runtime.js:338:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async renderEntry (C:\astro-projects\astro-theme-retypeset\node_modules\.pnpm\astro@6.1.5_@types+node@25._6d0c47d141c1ea47b78a1edce0d9f0d9\node_modules\astro\dist\content\runtime.js:396:82)
+    at async addMetaToPost (C:\astro-projects\astro-theme-retypeset\src\utils\content.ts:26:39)
+    at async Promise.all (index 8)
+    at async _getPosts (C:\astro-projects\astro-theme-retypeset\src\utils\content.ts:90:25)
+12:17:55 [ERROR] Error: Failed to parse image reference: {&#x22;inferSize&#x22;:true,&#x22;src&#x22;:&#x22;https://image.radishzz.cc/image/gallery/sheep-1.jpg&#x22;,&#x22;alt&#x22;:&#x22;Альпака&#x22;,&#x22;index&#x22;:0}
+    at updateImageReferencesInBody (C:\astro-projects\astro-theme-retypeset\node_modules\.pnpm\astro@6.1.5_@types+node@25._6d0c47d141c1ea47b78a1edce0d9f0d9\node_modules\astro\dist\content\runtime.js:338:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async renderEntry (C:\astro-projects\astro-theme-retypeset\node_modules\.pnpm\astro@6.1.5_@types+node@25._6d0c47d141c1ea47b78a1edce0d9f0d9\node_modules\astro\dist\content\runtime.js:396:82)
+    at async addMetaToPost (C:\astro-projects\astro-theme-retypeset\src\utils\content.ts:26:39)
+    at async Promise.all (index 8)
+    at async _getPosts (C:\astro-projects\astro-theme-retypeset\src\utils\content.ts:90:25)
+12:17:55 [ERROR] Error: Failed to parse image reference: {&#x22;inferSize&#x22;:true,&#x22;src&#x22;:&#x22;https://image.radishzz.cc/image/gallery/sheep-1.jpg&#x22;,&#x22;alt&#x22;:&#x22;Альпака&#x22;,&#x22;index&#x22;:0}
+    at updateImageReferencesInBody (C:\astro-projects\astro-theme-retypeset\node_modules\.pnpm\astro@6.1.5_@types+node@25._6d0c47d141c1ea47b78a1edce0d9f0d9\node_modules\astro\dist\content\runtime.js:338:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async renderEntry (C:\astro-projects\astro-theme-retypeset\node_modules\.pnpm\astro@6.1.5_@types+node@25._6d0c47d141c1ea47b78a1edce0d9f0d9\node_modules\astro\dist\content\runtime.js:396:82)
+    at async addMetaToPost (C:\astro-projects\astro-theme-retypeset\src\utils\content.ts:26:39)
+    at async Promise.all (index 8)
+    at async _getPosts (C:\astro-projects\astro-theme-retypeset\src\utils\content.ts:90:25)
+12:17:55 [ERROR] Failed to parse image reference: {&#x22;inferSize&#x22;:true,&#x22;src&#x22;:&#x22;https://image.radishzz.cc/image/gallery/sheep-1.jpg&#x22;,&#x22;alt&#x22;:&#x22;Альпака&#x22;,&#x22;index&#x22;:0}
+  Stack trace:
+    at updateImageReferencesInBody (C:\astro-projects\astro-theme-retypeset\node_modules\.pnpm\astro@6.1.5_@types+node@25._6d0c47d141c1ea47b78a1edce0d9f0d9\node_modules\astro\dist\content\runtime.js:338:13)
+    [...] See full stack trace in the browser, or rerun with --verbose.
+12:17:55 [ERROR] Failed to parse image reference: {&#x22;inferSize&#x22;:true,&#x22;src&#x22;:&#x22;https://image.radishzz.cc/image/gallery/sheep-1.jpg&#x22;,&#x22;alt&#x22;:&#x22;Альпака&#x22;,&#x22;index&#x22;:0}
+  Stack trace:
+    at updateImageReferencesInBody (C:\astro-projects\astro-theme-retypeset\node_modules\.pnpm\astro@6.1.5_@types+node@25._6d0c47d141c1ea47b78a1edce0d9f0d9\node_modules\astro\dist\content\runtime.js:338:13)
+    at async renderEntry (C:\astro-projects\astro-theme-retypeset\node_modules\.pnpm\astro@6.1.5_@types+node@25._6d0c47d141c1ea47b78a1edce0d9f0d9\node_modules\astro\dist\content\runtime.js:396:82)
+    at async Promise.all (index 8)
+12:17:55 [ERROR] Failed to parse image reference: {&#x22;inferSize&#x22;:true,&#x22;src&#x22;:&#x22;https://image.radishzz.cc/image/gallery/sheep-1.jpg&#x22;,&#x22;alt&#x22;:&#x22;Альпака&#x22;,&#x22;index&#x22;:0}
+  Stack trace:
+    at updateImageReferencesInBody (C:\astro-projects\astro-theme-retypeset\node_modules\.pnpm\astro@6.1.5_@types+node@25._6d0c47d141c1ea47b78a1edce0d9f0d9\node_modules\astro\dist\content\runtime.js:338:13)
+    at async renderEntry (C:\astro-projects\astro-theme-retypeset\node_modules\.pnpm\astro@6.1.5_@types+node@25._6d0c47d141c1ea47b78a1edce0d9f0d9\node_modules\astro\dist\content\runtime.js:396:82)
+    at async Promise.all (index 8)
+12:18:09 [200] /es/ 16ms
+12:18:09 [200] /es/about/ 13ms
+12:18:09 [200] /es/atom.xml/ 5ms
+12:18:10 [200] /ja/tags/ 36ms
+12:19:06 [ERROR] Error: Failed to parse image reference: {&#x22;inferSize&#x22;:true,&#x22;src&#x22;:&#x22;https://image.radishzz.cc/image/gallery/sheep-1.jpg&#x22;,&#x22;alt&#x22;:&#x22;Альпака&#x22;,&#x22;index&#x22;:0}
+    at updateImageReferencesInBody (C:\astro-projects\astro-theme-retypeset\node_modules\.pnpm\astro@6.1.5_@types+node@25._6d0c47d141c1ea47b78a1edce0d9f0d9\node_modules\astro\dist\content\runtime.js:338:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async renderEntry (C:\astro-projects\astro-theme-retypeset\node_modules\.pnpm\astro@6.1.5_@types+node@25._6d0c47d141c1ea47b78a1edce0d9f0d9\node_modules\astro\dist\content\runtime.js:396:82)
+    at async addMetaToPost (C:\astro-projects\astro-theme-retypeset\src\utils\content.ts:26:39)
+    at async Promise.all (index 8)
+    at async _getPosts (C:\astro-projects\astro-theme-retypeset\src\utils\content.ts:90:25)
+12:19:06 [ERROR] Failed to parse image reference: {&#x22;inferSize&#x22;:true,&#x22;src&#x22;:&#x22;https://image.radishzz.cc/image/gallery/sheep-1.jpg&#x22;,&#x22;alt&#x22;:&#x22;Альпака&#x22;,&#x22;index&#x22;:0}
+  Stack trace:
+    at updateImageReferencesInBody (C:\astro-projects\astro-theme-retypeset\node_modules\.pnpm\astro@6.1.5_@types+node@25._6d0c47d141c1ea47b78a1edce0d9f0d9\node_modules\astro\dist\content\runtime.js:338:13)
+    [...] See full stack trace in the browser, or rerun with --verbose.

@@ -1,10 +1,10 @@
 ---
 title: Братская могила советских воинов 1942, с.Тулумчак (нежил.)
-abbrlink: memento-sevastopol-ru-necropol
 published: 2010-06-28
 updated: 2026-09-29
 tags:
   - ak-monay
+  - sevastopol-ru-necropol
 draft: false
 pin: 0
 toc: true

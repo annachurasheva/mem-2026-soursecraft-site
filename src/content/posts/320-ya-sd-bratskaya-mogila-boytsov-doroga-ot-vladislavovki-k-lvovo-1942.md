@@ -1,10 +1,10 @@
 ---
 title: 320-я СД, братская могила бойцов, дорога от Владиславовки к Львово, 1942
-abbrlink: memento-sevastopol-ru-necropol
-published: 2026-09-29
-updated: ''
+published: 2010-07-21
+updated: 2026-09-29
 tags:
   - ak-monay
+  - sevastopol-ru-necropol
 draft: false
 pin: 0
 toc: true

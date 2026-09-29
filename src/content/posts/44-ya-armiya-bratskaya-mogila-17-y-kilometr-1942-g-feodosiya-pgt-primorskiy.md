@@ -1,10 +1,10 @@
 ---
 title: 44-я Армия, братская могила "17-й километр", 1942 г., Феодосия, пгт Приморский
-abbrlink: memento-sevastopol-ru-necropol
-published: 2026-09-29
-updated: ''
+published: 2009-04-01
+updated: 2026-09-29
 tags:
   - ak-monay
+  - sevastopol-ru-necropol
 draft: false
 pin: 0
 toc: true

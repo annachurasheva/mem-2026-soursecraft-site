@@ -1,10 +1,10 @@
 ---
 title: Памятное место гибели командующего 51-й Армией Львова Владимира Николаевича (1897-1942), с.Львово (Джантора)
-abbrlink: memento-sevastopol-ru-necropol
 published: 2011-07-04
 updated: 2026-09-29
 tags:
   - ak-monay
+  - sevastopol-ru-necropol
 draft: false
 pin: 0
 toc: true

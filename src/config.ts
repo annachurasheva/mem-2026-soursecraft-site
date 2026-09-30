@@ -155,7 +155,7 @@ export const themeConfig: ThemeConfig = {
     // apiflash access key
     // generate website screenshots for open graph images
     // get your access key at: https://apiflash.com/
-    apiflashKey: '',
+    apiflashKey: '966105f9349d4e15b302ea1764aaebd0',
   },
   // SEO SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> END
 

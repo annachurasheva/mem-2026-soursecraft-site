@@ -20,7 +20,7 @@ export const themeConfig: ThemeConfig = {
     base: '/', // e.g., '/blog', '/docs'
     // favicon url
     // recommended formats: svg, png or ico
-    favicon: '/icons/favicon.svg', // or https://example.com/favicon.svg
+    favicon: '/icons/favicon.ico', // or https://example.com/favicon.svg
     // author emails
     emails: ['annachurashevaoutlook@yandex.ru', '79787883649@ya.ru'],
   },

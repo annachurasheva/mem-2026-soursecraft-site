@@ -127,7 +127,7 @@ export const themeConfig: ThemeConfig = {
     verification: {
       // google search console
       // https://search.google.com/search-console
-      google: '',
+      google: 'TnhV_R35o3lIwp3Wz1evHIkhsMfcOU_pF1bamg7UezQ',
       // bing webmaster tools
       // https://www.bing.com/webmasters
       bing: '',
@@ -140,7 +140,7 @@ export const themeConfig: ThemeConfig = {
     },
     // google analytics
     // https://analytics.google.com
-    googleAnalyticsID: '',
+    googleAnalyticsID: 'G-6DXVYRF2PE',
     // umami analytics
     // https://cloud.umami.is
     umamiAnalyticsID: '',

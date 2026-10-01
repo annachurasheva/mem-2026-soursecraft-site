@@ -6,8 +6,8 @@ tags:
   - ak-monay
   - sevastopol-ru-necropol
 draft: false
-pin: 90
-toc: false
+pin: 00
+toc: true
 lang: ru
 authorIds:
   - naumenko-v-g

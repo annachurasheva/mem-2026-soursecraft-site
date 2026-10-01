@@ -5,8 +5,6 @@ description: "Помним, гордимся / № 19 от 11 мая 2017. Гл�
 tags:
   - ak-monay
   - sevastopol-ru-necropol
-draft: true
-toc: false
 lang: ru
 ---
 

@@ -5,8 +5,6 @@ description: "Помним, гордимся / № 18 от 4 мая 2017. Рас
 tags:
   - ak-monay
   - sevastopol-ru-necropol
-draft: true
-toc: false
 lang: ru
 authorIds:
   - redaktsiya

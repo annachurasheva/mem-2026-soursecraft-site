@@ -6,7 +6,7 @@ tags:
   - ak-monay
   - sevastopol-ru-necropol
 draft: false
-toc: false
+toc: true
 lang: ru
 authorIds:
   - tkachenko-s-n

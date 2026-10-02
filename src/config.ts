@@ -137,6 +137,9 @@ export const themeConfig: ThemeConfig = {
       // baidu search
       // https://ziyuan.baidu.com
       baidu: '',
+      // dzen verification
+      // https://dzen.ru/publisher
+      zen: 'PZpMhVMoxloRq0OgkpPHAsV8KmOVVY1PWVetxraFZhlitQjGYeC75oRrt2gcQMfB',
     },
     // google analytics
     // https://analytics.google.com
@@ -148,9 +151,9 @@ export const themeConfig: ThemeConfig = {
     // https://folo.is/
     folo: {
       // feed ID
-      feedID: '',
+      feedID: '1315642867116277760',
       // user ID
-      userID: '',
+      userID: '1315320438099673088',
     },
     // apiflash access key
     // generate website screenshots for open graph images

@@ -151,9 +151,9 @@ export const themeConfig: ThemeConfig = {
     // https://folo.is/
     folo: {
       // feed ID
-      feedID: '1315642867116277760',
+      feedID: '1315921079494901760',
       // user ID
-      userID: '1315320438099673088',
+      userID: '1315893038760722432',
     },
     // apiflash access key
     // generate website screenshots for open graph images

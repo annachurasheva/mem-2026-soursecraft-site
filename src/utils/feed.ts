@@ -273,7 +273,7 @@ export async function generateFeed({ lang }: { lang?: Language } = {}) {
   // Add folo verification if available
   if (folo?.feedID && folo?.userID) {
     feed.addExtension({
-      name: 'folo_challenge',
+      name: 'follow_challenge',
       objects: {
         feedId: folo.feedID,
         userId: folo.userID,

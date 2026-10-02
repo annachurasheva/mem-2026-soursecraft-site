@@ -73,6 +73,7 @@ export interface ThemeConfig {
       bing?: string
       yandex?: string
       baidu?: string
+      zen?: string
     }
     googleAnalyticsID?: string
     umamiAnalyticsID?: string

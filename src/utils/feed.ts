@@ -102,6 +102,49 @@ async function fixRelativeImagePaths(htmlContent: string, baseUrl: string): Prom
 }
 
 /**
+ * Converts HTML in Dzen format: plain text + markdown links + markdown lists.
+ * Removes bold, italics, tables, headings. Keeps only text, links and lists.
+ *
+ * @param html - HTML content string
+ * @returns Plain-text string with markdown links and lists suitable for Dzen RSS
+ */
+function convertToDzenFormat(html: string): string {
+  const root = parse(html)
+
+  // Remove all tags except links and lists
+  root.querySelectorAll('*').forEach((el) => {
+    const tag = el.tagName.toLowerCase()
+    // Keep links but convert them to markdown
+    if (tag === 'a') {
+      const href = el.getAttribute('href')
+      const text = el.text.trim()
+      if (href && text) {
+        el.replaceWith(`[${text}](${href})`)
+      }
+      else if (text) {
+        el.replaceWith(text)
+      }
+      return
+    }
+    // Keep lists, convert them to markdown
+    if (tag === 'ul' || tag === 'ol') {
+      const items = el.querySelectorAll('li')
+      const mdList = Array.from(items).map((li, i) => {
+        const prefix = tag === 'ol' ? `${i + 1}. ` : '- '
+        return prefix + li.text.trim()
+      }).join('\n')
+      el.replaceWith(`\n${mdList}\n`)
+      return
+    }
+    // All other tags (strong, em, table, h1-h6, p, div) — remove, keep text
+    el.replaceWith(el.text)
+  })
+
+  // Clean up extra blank lines
+  return root.text.replace(/\n{3,}/g, '\n\n').trim()
+}
+
+/**
  * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
  * Generate a feed object supporting both RSS and Atom formats
  *
@@ -178,18 +221,52 @@ export async function generateFeed({ lang }: { lang?: Language } = {}) {
     // updateDate -> Atom:<updated>, RSS has no update tag
     const updateDate = post.data.updated ? new Date(post.data.updated) : publishDate
 
+    // Convert content to Dzen format (plain text + markdown links/lists)
+    const dzenContent = convertToDzenFormat(postContent)
+
+    // Skip posts with empty content
+    if (!dzenContent || dzenContent.trim().length === 0) {
+      console.warn(`⚠️  Post "${post.data.title}" skipped: empty content`)
+      continue
+    }
+
+    // Check minimum length (300 chars for Dzen)
+    const contentLength = dzenContent.length
+    if (contentLength < 300) {
+      console.warn(`⚠️  Post "${post.data.title}" is too short (${contentLength} chars, needs >=300)`)
+    }
+
+    // Check description presence
+    const postDescription = getPostDescription(post, 'feed')
+    if (!postDescription || postDescription.trim().length === 0) {
+      console.warn(`⚠️  Post "${post.data.title}" has no description`)
+    }
+
+    // Build the URL of the OG image for the cover
+    const ogImageUrl = new URL(`og/${slug}.png`, siteURL).toString()
+
     feed.addItem({
       title: post.data.title,
       id: link,
       link,
-      description: getPostDescription(post, 'feed'),
-      content: postContent,
+      description: postDescription,
+      content: dzenContent, // Dzen format instead of HTML
       author: [{
         name: author,
         link: `${url}${base}/`,
       }],
       published: publishDate,
       date: updateDate,
+      // RSS 2.0: serialized as <enclosure url="..." type="image/png" length="0"/>
+      // Atom: serialized as <link rel="enclosure" href="..." type="image/png"/>
+      // (also covers the item-level image for Atom; feed 5.2.0 overwrites
+      // `image` onto `enclosure` in RSS anyway, so a single field is needed)
+      enclosure: {
+        url: ogImageUrl,
+        type: 'image/png',
+        length: 0,
+      },
+      category: post.data.tags?.map((tag: string) => ({ name: tag })) ?? [],
     })
   }
 

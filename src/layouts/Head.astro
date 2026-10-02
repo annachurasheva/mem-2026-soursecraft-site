@@ -31,7 +31,7 @@ const { title, subtitle, description, i18nTitle, author, favicon } = themeConfig
 const { mode: defaultMode, light: { background: lightMode }, dark: { background: darkMode } } = themeConfig.color
 const { reduceMotion } = themeConfig.global
 const { verification = {}, twitterID = '', googleAnalyticsID = '', umamiAnalyticsID = '', apiflashKey = '' } = themeConfig.seo ?? {}
-const { google = '', bing = '', yandex = '', baidu = '' } = verification
+const { google = '', bing = '', yandex = '', baidu = '', zen = '' } = verification
 const { customGoogleAnalyticsJS = '', customUmamiAnalyticsJS = '' } = themeConfig.preload ?? {}
 
 // Site Metadata
@@ -135,6 +135,7 @@ const pageImage = postSlug
 {bing && <meta name="msvalidate.01" content={bing} />}
 {yandex && <meta name="yandex-verification" content={yandex} />}
 {baidu && <meta name="baidu-site-verification" content={baidu} />}
+{zen && <meta name="zen-verification" content={zen} />}
 
 <!-- Global View Transition -->
 <ClientRouter fallback="none" />

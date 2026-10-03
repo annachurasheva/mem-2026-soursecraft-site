@@ -4,12 +4,13 @@ published: 2020-06-29
 updated: 2026-10-01
 tags:
   - Помним гордимся
+  - Вахта памяти
 draft: false
-pin: 0
+pin: 77
 toc: true
 lang: 'ru'
 authorIds:
-  - ak-monay
+  - sinderovich-kirill
 ---
 
 Вести с полей... Ак-Монай. День двадцать четвертый.

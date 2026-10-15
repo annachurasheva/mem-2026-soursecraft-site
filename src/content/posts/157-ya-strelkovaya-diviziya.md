@@ -10,6 +10,7 @@ pin: 50
 toc: true
 lang: "ru"
 authorIds:
+  - wikipedia
 ---
 
 ### Сталинградские рубежи

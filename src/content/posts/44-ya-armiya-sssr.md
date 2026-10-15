@@ -10,6 +10,7 @@ pin: 51
 toc: true
 lang: "ru"
 authorIds:
+  - wikipedia
 ---
 
 # 44-я армия (СССР)

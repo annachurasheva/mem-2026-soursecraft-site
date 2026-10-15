@@ -10,6 +10,7 @@ pin: 51
 toc: true
 lang: "ru"
 authorIds:
+  - wikipedia
 ---
 
 Материал из Википедии — свободной энциклопедии

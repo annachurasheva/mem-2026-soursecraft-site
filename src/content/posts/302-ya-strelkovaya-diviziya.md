@@ -10,6 +10,7 @@ pin: 50
 toc: true
 lang: "ru"
 authorIds:
+  - wikipedia
 ---
 
 # 302-я стрелковая дивизия

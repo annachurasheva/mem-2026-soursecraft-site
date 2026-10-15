@@ -10,6 +10,7 @@ pin: 50
 toc: true
 lang: "ru"
 authorIds:
+  - wikipedia
 ---
 
 # 276-я стрелковая дивизия (1-го формирования)

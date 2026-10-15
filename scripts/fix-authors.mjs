@@ -1,10 +1,14 @@
 // scripts/fix-authors.mjs
-// Восстанавливает корректный синтаксис массива для authorIds в YAML frontmatter.
-// По умолчанию DRY-RUN: только печатает найденное, НИЧЕГО не пишет.
-// Запись — только с флагом --apply.
+// БАЗОВЫЙ скрипт для проверок перед публикациями.
+// Восстанавливает корректный синтаксис массива authorIds в YAML frontmatter
+// и проставляет автора по умолчанию (DEFAULT_AUTHOR — ID из src/data/authors.yaml).
+//
+// По умолчанию DRY-RUN: только показывает, ЧТО планирует исправить, НИЧЕГО не пишет.
+// Реальная запись — только с флагом --apply.
+//
 // Запуск:
-//   node scripts/fix-authors.mjs "src/content/posts"            <- сухой прогон
-//   node scripts/fix-authors.mjs "src/content/posts" --apply    <- реальная запись
+//   node scripts/fix-authors.mjs "src/content/posts"           <- сухой прогон (рекомендуется перед публикацией)
+//   node scripts/fix-authors.mjs "src/content/posts" --apply   <- реальная запись
 
 import { readdir, readFile, writeFile, stat } from 'node:fs/promises'
 import { basename, extname, join } from 'node:path'
@@ -12,7 +16,8 @@ import process from 'node:process'
 
 const ROOT = process.argv[2]
 const APPLY = process.argv.includes('--apply')
-const DEFAULT_AUTHOR = 'wikipedia' // Можно заменить на 'redaktsiya', если нужно
+// Автор по умолчанию: ID записи 'wikipedia' из src/data/authors.yaml
+const DEFAULT_AUTHOR = 'wikipedia'
 
 if (!ROOT) {
   console.error('❌ Укажите папку: node scripts/fix-authors.mjs "путь" [--apply]')
@@ -20,11 +25,11 @@ if (!ROOT) {
   process.exit(1)
 }
 
-// Регулярное выражение ищет:
-// 1. "authorIds:" в начале строки
-// 2. Перенос строки
-// 3. Следующая строка НЕ начинается с тире и пробела (признак валидного YAML-массива)
-const RX_BROKEN_AUTHOR_IDS = /(^authorIds:\s*\r?\n)(?!\s*-)([^\r\n]+)/gm
+// Регулярное выражение ищет сломанный authorIds:
+//   1. "authorIds:" в начале строки + перевод строки
+//   2. следующая строка НЕ является элементом YAML-массива ("- item", т.е. "- " с пробелом)
+// и захватывает эту строку, чтобы решить, что с ней делать (закрывающий "---" сохраняем).
+const RX_BROKEN_AUTHOR_IDS = /(^authorIds:\s*\r?\n)(?!\s*-[ 	])([^\r\n]*)(\r?\n|$)/gm
 
 let totalFixed = 0
 
@@ -39,18 +44,32 @@ async function processFile(filePath) {
 
   const matches = [...content.matchAll(RX_BROKEN_AUTHOR_IDS)]
   if (!matches.length) {
-    return // Файл уже корректен (имеет тире) или не содержит authorIds
+    return // Файл уже корректен (authorIds — массив) или не содержит authorIds
   }
 
   console.log(`\n== ${basename(filePath)} — найдено проблемных authorIds: ${matches.length}`)
-  
-  // Показываем контекст найденного для прозрачности
-  matches.slice(0, 3).forEach((m) => {
-    console.log(`   Было: "${m[0].replace(/\n/g, '\\n')}"`)
-  })
 
-  // Заменяем на корректный YAML-массив с отступом в 2 пробела
-  const fixedContent = content.replace(RX_BROKEN_AUTHOR_IDS, `$1  - ${DEFAULT_AUTHOR}\n`)
+  // Показываем, ЧТО планируется исправить (для прозрачности)
+  matches.slice(0, 3).forEach((m) => {
+    console.log(`   Было:   "${m[0].replace(/\n/g, '\\n')}"`)
+    console.log(`   Станет: "authorIds:\\n  - ${DEFAULT_AUTHOR}\\n"`)
+  })
+  if (matches.length > 3) {
+    console.log(`   … и ещё ${matches.length - 3} совпадение(й)`)
+  }
+
+  // Заменяем на корректный YAML-массив с отступом в 2 пробела.
+  // Закрывающий разделитель frontmatter "---" при этом сохраняется.
+  const fixedContent = content.replace(
+    RX_BROKEN_AUTHOR_IDS,
+    (match, header, brokenLine, lineEnd) => {
+      const isFrontmatterTerminator = /^---+$/.test(brokenLine.trim())
+      if (isFrontmatterTerminator) {
+        return `${header}  - ${DEFAULT_AUTHOR}\n${brokenLine}${lineEnd}`
+      }
+      return `${header}  - ${DEFAULT_AUTHOR}\n`
+    },
+  )
 
   if (APPLY) {
     try {
@@ -82,7 +101,7 @@ async function walk(dir) {
       await walk(p)
       continue
     }
-    
+
     const fileStat = await stat(p).catch(() => null)
     if (!fileStat || !fileStat.isFile()) continue
     if (extname(entry.name).toLowerCase() !== '.md') continue
@@ -92,6 +111,7 @@ async function walk(dir) {
 }
 
 console.log(`🔍 Сканирование папки: ${ROOT}`)
+console.log(`👤 Автор по умолчанию: ${DEFAULT_AUTHOR} (см. src/data/authors.yaml)`)
 await walk(ROOT)
 
 console.log(`\n📊 Итого: обработано файлов с ошибками: ${totalFixed}`)

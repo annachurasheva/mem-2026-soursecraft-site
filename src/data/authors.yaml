@@ -265,7 +265,7 @@
   type: библиотека
   credentials: ''
   access: публичный
-  license_note: 'материал публичен; условия лицензии сверены по карточке каталога'
+  license_note: материал публичен; условия лицензии сверены по карточке каталога
   link: /poiskoviki/
   note: 'ПРИМЕР-ШАБЛОН: образец заполнения библиотеки; источник справочных материалов'
   url: https://www.rsl.ru
@@ -278,7 +278,7 @@
   legal_name: ''
   alternate_name:
     - РГБ
-  founding_date: '1862-07-01'
+  founding_date: 1862-07-01
   dissolution_date: ''
   successor: ''
   predecessor: []
@@ -304,8 +304,8 @@
   legal_name: Институт истории СССР Академии наук СССР
   alternate_name:
     - ИИ СССР
-  founding_date: '1936-01-01'
-  dissolution_date: '1992-12-31'
+  founding_date: 1936-01-01
+  dissolution_date: 1992-12-31
   successor: ''
   predecessor: []
   parent_organization: Академия наук СССР
@@ -329,6 +329,32 @@
   legal_name: ''
   alternate_name: []
   founding_date: ''
+  dissolution_date: ''
+  successor: ''
+  predecessor: []
+  parent_organization: ''
+  location: ''
+
+# ------------------------------------------------------------
+# ИСТОЧНИК: Википедия (для статей, адаптированных из открытых источников)
+# ------------------------------------------------------------
+- id: wikipedia
+  name: Википедия (свободная энциклопедия)
+  type: источник
+  credentials: ''
+  access: публичный
+  license_note: CC BY-SA
+  link: 'https://ru.wikipedia.org'
+  note: 'Материалы, адаптированные из открытой энциклопедии (заполнено по умолчанию)'
+  url: 'https://ru.wikipedia.org'
+  sameAs: []
+  image: ''
+  jobTitle: ''
+  affiliation: ''
+  schema_type: Organization
+  legal_name: Wikimedia Foundation
+  alternate_name: [Wikipedia, Википедия]
+  founding_date: 2001-01-15
   dissolution_date: ''
   successor: ''
   predecessor: []

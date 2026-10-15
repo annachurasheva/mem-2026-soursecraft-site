@@ -62,7 +62,7 @@ async function processFile(filePath) {
   // Закрывающий разделитель frontmatter "---" при этом сохраняется.
   const fixedContent = content.replace(
     RX_BROKEN_AUTHOR_IDS,
-    (match, header, brokenLine, lineEnd) => {
+    (header, brokenLine, lineEnd) => {
       const isFrontmatterTerminator = /^---+$/.test(brokenLine.trim())
       if (isFrontmatterTerminator) {
         return `${header}  - ${DEFAULT_AUTHOR}\n${brokenLine}${lineEnd}`

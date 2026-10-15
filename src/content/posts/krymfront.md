@@ -5,7 +5,7 @@ updated: 2026-10-08
 tags:
   - Войсковые соединения
   - Крым Фронт
-draft: true
+draft: false
 pin: 51
 toc: true
 lang: 'ru'

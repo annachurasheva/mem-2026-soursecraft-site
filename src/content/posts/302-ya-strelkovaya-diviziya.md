@@ -5,7 +5,7 @@ updated: 2026-10-08
 tags:
   - Войсковые соединения
   - дивизия
-draft: true
+draft: false
 pin: 50
 toc: true
 lang: "ru"

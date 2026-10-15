@@ -3,9 +3,8 @@ title: 957‑я отдельная кабельно‑шестовая рота 
 published: 2016-02-13
 updated: 2026-10-07
 tags:
-  - Войсковые соединения
-  - 957 окшр
-draft: true
+  - Войсковые соединения  
+draft: false
 pin: 47
 toc: true
 lang: 'ru'

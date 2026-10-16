@@ -266,7 +266,9 @@ export async function generateFeed({ lang }: { lang?: Language } = {}) {
         type: 'image/png',
         length: 0,
       },
-      category: post.data.tags?.map((tag: string) => ({ name: tag })) ?? [],
+      // RFC 4287 requires the `term` attribute on Atom <category>;
+      // `name` is used by the RSS 2.0 serializer
+      category: post.data.tags?.map((tag: string) => ({ name: tag, term: tag })) ?? [],
     })
   }
 

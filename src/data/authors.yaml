@@ -231,6 +231,31 @@
   parent_organization: ''
   location: Севастополь
 
+  # --- Информационный портал пгт Ленино ---
+- id: lenino_info_portal
+  name: Информационный портал пгт Ленино
+  type: информационный портал
+  credentials: Местные жители и туристы
+  access: публичный
+  license_note: Не указано
+  link: https://ok.ru/lenino.info
+  note: Портал создан для местных жителей и туристов с целью предоставления интересной информации о посёлке.
+  url: https://ok.ru/lenino.info
+  sameAs: []
+    - https://vk.com/leninoinfo
+    image: ''
+  jobTitle: ''
+  affiliation: Администрация пгт Ленино
+  schema_type: Organization
+  legal_name: ''
+  alternate_name: [Портал Ленино]
+  founding_date: ''
+  dissolution_date: ''
+  successor: ''
+  predecessor: []
+  parent_organization: ''
+  location: пгт Ленино, Республика Крым
+
 # ------------------------------------------------------------
 # ПРИМЕРЫ-ШАБЛОНЫ (образцы заполнения для каждой секции)
 # ------------------------------------------------------------

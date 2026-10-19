@@ -231,9 +231,9 @@
   parent_organization: ''
   location: Севастополь
 
-# --- Редакция: интернет-издание lenino.info (2025) ---
-- id: redaktsiya
-  name: Редакция (интернет-издание lenino.info)
+# --- Интернет-издание lenino.info (2025) ---
+- id: lenino_info_portal
+  name: Интернет-издание lenino.info
   type: редакция
   credentials: ''
   access: публичный
@@ -301,7 +301,7 @@
   legal_name: ''
   alternate_name:
     - РГБ
-  founding_date: 1862-07-01
+  founding_date: '1862-07-01'
   dissolution_date: ''
   successor: ''
   predecessor: []
@@ -327,8 +327,8 @@
   legal_name: Институт истории СССР Академии наук СССР
   alternate_name:
     - ИИ СССР
-  founding_date: 1936-01-01
-  dissolution_date: 1992-12-31
+  founding_date: '1936-01-01'
+  dissolution_date: '1992-12-31'
   successor: ''
   predecessor: []
   parent_organization: Академия наук СССР
@@ -377,7 +377,7 @@
   schema_type: Organization
   legal_name: Wikimedia Foundation
   alternate_name: [Wikipedia, Википедия]
-  founding_date: 2001-01-15
+  founding_date: '2001-01-15'
   dissolution_date: ''
   successor: ''
   predecessor: []

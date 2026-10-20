@@ -59,8 +59,20 @@ const authorSchema = z.object({
   schema_type: z.string().optional(),
   legal_name: z.string().optional(),
   alternate_name: z.array(z.string()).optional(),
-  founding_date: z.string().optional(),
-  dissolution_date: z.string().optional(),
+
+  // ИСПРАВЛЕНИЕ ДАТ (автоматический перевод Date-объектов в строки):
+  founding_date: z.preprocess((val) => {
+    if (val instanceof Date)
+      return val.toISOString().split('T')[0]
+    return val
+  }, z.string().optional()),
+
+  dissolution_date: z.preprocess((val) => {
+    if (val instanceof Date)
+      return val.toISOString().split('T')[0]
+    return val
+  }, z.string().optional()),
+
   successor: z.string().optional(),
   predecessor: z.array(z.string()).optional(),
   parent_organization: z.string().optional(),

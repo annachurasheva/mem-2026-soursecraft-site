@@ -3,10 +3,7 @@
 # src/data/units.yaml — единый источник данных о частях, дивизиях,
 # бригадах, полках и отрядах, в которых служили павшие.
 #
-# СТАТУС: файл-заготовка. Коллекция `units` ещё НЕ зарегистрирована
-# в src/content.config.ts — этот файл сейчас игнорируется сборкой.
-# Активация = изолированный аддон: отдельная defineCollection + Zod-схема,
-# оригинальные коллекции шаблона (posts/about) НЕ затрагиваются.
+# СТАТУС: коллекция units зарегистрирована в content.config.ts (аддон).
 #
 # ИСТОЧНИКИ ДАННЫХ:
 #   - ВНЕШНИЙ РАБОЧИЙ РЕПОЗИТОРИЙ: https://github.com/annachurasheva/fallen-cards
@@ -58,7 +55,7 @@
   formation_date: ''                      # дата формирования (без кавычек!)
   disbandment_date: ''                    # дата расформирования / последнего упоминания
   battles: []                             # массив сражений/операций: [«Оборона Крыма», «Штурм Сиваша»]
-  obd_source_doc: docs/TEXT/276-ya-strelkovaya-diviziya.md  # путь к исходному документу (колонка «Адрес источника»)
+  obd_source_doc: src/content/posts/276-ya-strelkovaya-diviziya.md  # адрес записи в ЭТОМ репо (в fallen-cards — зеркало с тем же именем)
   schema_type: Organization               # техническая схема Schema.org
   url: ''                                 # карточка соединения на сайте проекта (когда появится)
   sameAs: []                              # внешние справочники (Википедия, Память Народа)
@@ -66,3 +63,331 @@
   license_note: ''
   access: публичный                       # публичный | ограниченный | внутренний
   note: 'ключ словаря: 276-00-fallen-cards; образец-заготовка, поля уточняются'
+  
+  # --- Соединение: 320-я стрелковая дивизия (1-е формирование) ---
+- id: unit-320-00
+  name: 320-я стрелковая дивизия          # литературная норма; в словаре fallen-cards запись «320-ой стрелковая дивизия КрымФронт» — исправление согласовано с владельцем проекта
+  type: дивизия
+  alternate_names:                        # служебное поле: варианты писарей, достаточно двух
+    - скф 320 сд 44 А
+    - СКФ 320 сд
+  short_name: 320 сд
+  parent_unit: ''                         # см. front/army ниже
+  front: Крымский фронт                   # по ключевому слову «КрымФронт» в имени карточки и статье
+  army: 44 А
+  commander: ''                           # TODO: ФИО командиров(ов) из карточки fallen-cards
+  formation_date: 1941-08-17              # приказ по 51-й армии № 001 от 17.08.1941 (как 1-я Крымская сд)
+  disbandment_date: '1942-05'             # 1-е формирование: уничтожена на Керченском п/о, расформирована в мае 1942 (переформирование -> 2-е формирование); неполная точность — строка в кавычках
+  battles:
+    - Оборона Керченского полуострова (1941)
+    - Керченско-Феодосийская десантная операция
+  obd_source_doc: src/content/posts/320-ya-strelkovaya-diviziya.md
+  schema_type: Organization
+  url: ''
+  sameAs:
+    - https://ru.wikipedia.org/wiki/320-%D1%8F_%D1%81%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B4%D0%B8%D0%B2%D0%B8%D0%B7%D0%B8%D1%8F_(1-%D0%B3%D0%BE_%D1%84%D0%BE%D1%80%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)
+  image: ''
+  license_note: ''
+  access: публичный
+  note: 'ключ словаря: 320-00-fallen-cards; два формирования — запись о 1-м; переименована из 1-й Крымской сд директивой ГШ № орг/2/540132 от 1941-09-19; [Минцифры] ссылки OBD требуют российский корневой сертификат'
+
+# --- Соединение: 404-я стрелковая дивизия ---
+- id: unit-404-00
+  name: 404-я стрелковая дивизия
+  type: дивизия
+  alternate_names:
+    - скф 404 сд 44 А
+    - 404 сд
+  short_name: 404 сд
+  parent_unit: ''
+  front: Кавказский фронт → Крымский фронт
+  army: 44 А
+  commander: ''                           # TODO: ФИО командиров(ов) из карточки fallen-cards
+  formation_date: '1941-09'               # сентябрь — октябрь 1941, Закавказский фронт; месяц — без выдуманной точности
+  disbandment_date: 1942-06-14            # «официально расформирована 14 июня 1942 года» — статья 404-я сд, документальная позиция
+  battles:
+    - Керченско-Феодосийская десантная операция (26.12.1941—02.01.1942)
+    - Майское наступление 11-й армии (операция «Охота на дроф»), 8—20 мая 1942
+  obd_source_doc: src/content/posts/404-ya-strelkovaya-diviziya.md
+  schema_type: Organization
+  url: ''
+  sameAs:
+    - https://ru.wikipedia.org/wiki/404-%D1%8F_%D1%81%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B4%D0%B8%D0%B2%D0%B8%D0%B7%D0%B8%D1%8F
+  image: ''
+  license_note: ''
+  access: публичный
+  note: 'ключ словаря: 404-00-fallen-cards; уничтожена в мае 1942 в районе с. Седжеут (ныне Южное, Ленинский р-н), официально расформирована 1942-06-14; [Минцифры]'
+
+# --- Полк: 476-й стрелковый полк (ПОДЧИНЁН unit-320-00) — ПРИМЕР ЗАПОЛНЕНИЯ ---
+# Индекс 320-01. Правило имён id: unit-<ключ словаря без -fallen-cards>, дефис -> тире не трогаем.
+- id: unit-320-01
+  name: 476-й стрелковый полк 320-й стрелковой дивизии   # литературная норма; в словаре «320-ой» — исправление согласовано
+  type: полк
+  alternate_names:                        # служебное поле писарских вариантов: достаточно двух самых частых
+    - скф 476 сп 320 сд
+    - СКФ 476 п 320 д
+  short_name: 476 сп
+  parent_unit: unit-320-00                # прямое подчинение дивизии — ссылка на id из этого реестра
+  front: Крымский фронт
+  army: 44 А
+  commander: ''                           # TODO: командир полка (нет данных в fallen-cards — нужен источник)
+  formation_date: ''                      # TODO: дата формирования полка
+  disbandment_date: ''                    # TODO: расформирование/последнее упоминание
+  battles: []                             # TODO: операции полка (частично наследует battles дивизии)
+  obd_source_doc: src/content/posts/320-ya-strelkovaya-diviziya.md  # адрес записи в ЭТОМ репо (в fallen-cards — зеркало docs/TEXT/ с тем же именем)
+  schema_type: Organization
+  url: ''
+  sameAs: []
+  image: ''
+  license_note: ''
+  access: публичный
+  note: 'ключ словаря: 320-01-fallen-cards; пример заполнения подразделения прямого подчинения'
+
+# --- Полк: 478-й стрелковый полк (ПОДЧИНЁН unit-320-00) — ПРИМЕР ЗАПОЛНЕНИЯ ---
+# Индекс 320-02. Вариантов написания в словаре два — используем оба.
+- id: unit-320-02
+  name: 478-й стрелковый полк 320-й стрелковой дивизии
+  type: полк
+  alternate_names:
+    - скф 478 сп 44 А
+    - СКФ 478 п 320 сд
+  short_name: 478 сп
+  parent_unit: unit-320-00
+  front: Крымский фронт
+  army: 44 А
+  commander: ''
+  formation_date: ''
+  disbandment_date: ''
+  battles: []
+  obd_source_doc: src/content/posts/320-ya-strelkovaya-diviziya.md
+  schema_type: Organization
+  url: ''
+  sameAs: []
+  image: ''
+  license_note: ''
+  access: публичный
+  note: 'ключ словаря: 320-02-fallen-cards; пример заполнения'
+
+# --- Полк: 481-й стрелковый полк (ПОДЧИНЁН unit-320-00) ---
+# Индекс 320-03.
+- id: unit-320-03
+  name: 481-й стрелковый полк 320-й стрелковой дивизии
+  type: полк
+  alternate_names:
+    - 481 сп 320 сд КрымФ
+    - скф 481 сп 320 сд
+  short_name: 481 сп
+  parent_unit: unit-320-00
+  front: Крымский фронт
+  army: 44 А
+  commander: ''
+  formation_date: ''
+  disbandment_date: ''
+  battles: []
+  obd_source_doc: src/content/posts/320-ya-strelkovaya-diviziya.md
+  schema_type: Organization
+  url: ''
+  sameAs: []
+  image: ''
+  license_note: ''
+  access: публичный
+  note: 'ключ словаря: 320-03-fallen-cards'
+
+# --- Полк: 985-й артиллерийский полк (ПОДЧИНЁН unit-320-00) ---
+# Индекс 320-04.
+- id: unit-320-04
+  name: 985-й артиллерийский полк 320-й стрелковой дивизии
+  type: полк
+  alternate_names:
+    - СКФ 985 ап 320 сд
+    - 985 ап 320 сд
+  short_name: 985 ап
+  parent_unit: unit-320-00
+  front: Крымский фронт
+  army: 44 А
+  commander: ''
+  formation_date: ''
+  disbandment_date: ''
+  battles: []
+  obd_source_doc: src/content/posts/320-ya-strelkovaya-diviziya.md
+  schema_type: Organization
+  url: ''
+  sameAs: []
+  image: ''
+  license_note: ''
+  access: публичный
+  note: 'ключ словаря: 320-04-fallen-cards'
+  
+# --- Полк: 643-й стрелковый полк (ПОДЧИНЁН unit-404-00) ---
+# Индекс 404-01.
+- id: unit-404-01
+  name: 643-й стрелковый полк 404-й стрелковой дивизии
+  type: полк
+  alternate_names:
+    - СКФ 643 сп 404 сд
+    - 643 сп 404 сд
+  short_name: 643 сп
+  parent_unit: unit-404-00
+  front: Крымский фронт
+  army: 44 А
+  commander: ''
+  formation_date: ''
+  disbandment_date: ''
+  battles: []
+  obd_source_doc: src/content/posts/404-ya-strelkovaya-diviziya.md
+  schema_type: Organization
+  url: ''
+  sameAs: []
+  image: ''
+  license_note: ''
+  access: публичный
+  note: 'ключ словаря: 404-01-fallen-cards'
+
+# --- Полк: 652-й стрелковый полк (ПОДЧИНЁН unit-404-00) ---
+# Индекс 404-02.
+- id: unit-404-02
+  name: 652-й стрелковый полк 404-й стрелковой дивизии
+  type: полк
+  alternate_names:
+    - СКФ 652 сп 404 сд
+    - 652 сп
+  short_name: 652 сп
+  parent_unit: unit-404-00
+  front: Крымский фронт
+  army: 44 А
+  commander: ''
+  formation_date: ''
+  disbandment_date: ''
+  battles: []
+  obd_source_doc: src/content/posts/404-ya-strelkovaya-diviziya.md
+  schema_type: Organization
+  url: ''
+  sameAs: []
+  image: ''
+  license_note: ''
+  access: публичный
+  note: 'ключ словаря: 404-02-fallen-cards'
+
+# --- Полк: 655-й стрелковый полк (ПОДЧИНЁН unit-404-00) ---
+# Индекс 404-03. В словаре 4 написания — берём два разных по структуре.
+- id: unit-404-03
+  name: 655-й стрелковый полк 404-й стрелковой дивизии
+  type: полк
+  alternate_names:
+    - СКФ 655 сп 404 сд
+    - 655 сп 404 сд крымф
+  short_name: 655 сп
+  parent_unit: unit-404-00
+  front: Крымский фронт
+  army: 44 А
+  commander: ''
+  formation_date: ''
+  disbandment_date: ''
+  battles: []
+  obd_source_doc: src/content/posts/404-ya-strelkovaya-diviziya.md
+  schema_type: Organization
+  url: ''
+  sameAs: []
+  image: ''
+  license_note: ''
+  access: публичный
+  note: 'ключ словаря: 404-03-fallen-cards'
+
+# --- Полк: 665-й стрелковый полк (ПОДЧИНЁН unit-404-00) ---
+# Индекс 404-04. В словаре одно написание — пишем как есть (массив может быть короче двух).
+- id: unit-404-04
+  name: 665-й стрелковый полк 404-й стрелковой дивизии
+  type: полк
+  alternate_names:
+    - СКФ 665 сп 404 сд
+  short_name: 665 сп
+  parent_unit: unit-404-00
+  front: Крымский фронт
+  army: 44 А
+  commander: ''
+  formation_date: ''
+  disbandment_date: ''
+  battles: []
+  obd_source_doc: src/content/posts/404-ya-strelkovaya-diviziya.md
+  schema_type: Organization
+  url: ''
+  sameAs: []
+  image: ''
+  license_note: ''
+  access: публичный
+  note: 'ключ словаря: 404-04-fallen-cards'
+  
+# --- Рота: 460-я разведывательная рота (ПОДЧИНЁН unit-404-00) ---
+# Индекс 404-08.
+- id: unit-404-08
+  name: 460-я разведывательная рота 404-й стрелковой дивизии
+  type: рота
+  alternate_names:
+    - 404 сд 460 мото-развед. рота
+    - 460 омрр 404 сд
+  short_name: 460 орр
+  parent_unit: unit-404-00
+  front: Крымский фронт
+  army: 44 А
+  commander: ''
+  formation_date: ''
+  disbandment_date: ''
+  battles: []
+  obd_source_doc: src/content/posts/404-ya-strelkovaya-diviziya.md
+  schema_type: Organization
+  url: ''
+  sameAs: []
+  image: ''
+  license_note: ''
+  access: публичный
+  note: 'ключ словаря: 404-08-fallen-cards'
+
+# --- Батальон: 679-й сапёрный батальон (ПОДЧИНЁН unit-404-00) ---
+# Индекс 404-09.
+- id: unit-404-09
+  name: 679-й сапёрный батальон 404-й стрелковой дивизии
+  type: батальон
+  alternate_names:
+    - СКФ 679 осб 404 сд
+  short_name: 679 осб
+  parent_unit: unit-404-00
+  front: Крымский фронт
+  army: 44 А
+  commander: ''
+  formation_date: ''
+  disbandment_date: ''
+  battles: []
+  obd_source_doc: src/content/posts/404-ya-strelkovaya-diviziya.md
+  schema_type: Organization
+  url: ''
+  sameAs: []
+  image: ''
+  license_note: ''
+  access: публичный
+  note: 'ключ словаря: 404-09-fallen-cards'
+
+# --- Полк: 961-й артиллерийский полк (ПОДЧИНЁН unit-404-00) ---
+# Индекс 404-10. Внимание: в словаре есть вариант «961 сп» — вероятно писарская ошибка (ап vs сп), храним как есть.
+- id: unit-404-10
+  name: 961-й артиллерийский полк 404-й стрелковой дивизии
+  type: полк
+  alternate_names:
+    - 961 ап
+    - скф 44 А 961 ап
+  short_name: 961 ап
+  parent_unit: unit-404-00
+  front: Крымский фронт
+  army: 44 А
+  commander: ''
+  formation_date: ''
+  disbandment_date: ''
+  battles: []
+  obd_source_doc: src/content/posts/404-ya-strelkovaya-diviziya.md
+  schema_type: Organization
+  url: ''
+  sameAs: []
+  image: ''
+  license_note: ''
+  access: публичный
+  note: 'ключ словаря: 404-10-fallen-cards; вариант «961 сп» в словаре помечен как возможная писарская ошибка, в alternate_names не внесён'
+  

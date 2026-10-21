@@ -189,7 +189,7 @@ note: null # ❌ null тоже не string
 2. В`content.config.ts`—отдельные`defineCollection`(`unitSchema`,`cemeterySchema`) с изолированными loader'ами (`glob({ pattern: 'units.yaml', base: './src/data' })`). Оригинальные коллекции шаблона (`posts`/`about`) не тронуты — принцип неинвазивности соблюдён.
 3. Уникальность`id`— глобальная, через все три реестра (см. п. 2.3).
 4. Даты — общий helper`isoDate()`(`z.preprocess`: Date → строка`YYYY-MM-DD`).
-5. Документальные позиции не меняем.Поля, где источник даёт «строку, похожую на число» (`passport_number`с слэшем`82-289/2023`,`obd_document_id`,`buried_known/unknown`), защищены`z.preprocess`от number→string; значения из CSV переносятся символ в символ.
+5. Документальные позиции не меняем.Поля, где источник даёт «строку, похожую на число» (`passport_number`с слэшем`82-289/2023`,`obd_document_id`,`buried_known/unknown`), защищены`z.preprocess`от number→string; значения из CSV переносятся символ в символ. Поля`graves_count`и`buried_total`принимают строку ИЛИ число (`z.union([z.string(), z.number().int()])` + `z.preprocess` number→string): OBD отдаёт текстовые позиции «неизвестно», «более 3000» — такие значения сохраняются как есть, символ в символ, и не роняют сборку.
 6. Внешние ссылки на сервисы МО РФ(obd-memorial.ru, memmo.ru): официальное предупреждение Минобороны требует российских сертификатов / корневого сертификата Минцифры. Поэтому: ссылка хранится как есть + метка`[Минцифры]`в`note`; автоматическая проверка доступности при сборке НЕ делается; карточка самодостаточна (данные CSV дублируются в полях).
 
 ### 5.1. Фактические поля`units.yaml`(схема`unitSchema`)
@@ -223,7 +223,7 @@ note: null # ❌ null тоже не string
 | primary_burial_object, rebural_from                                | string      | первичное захоронение / откуда перенесено (орфография OBD сохранена) |
 | date_created, date_last_burial                                     | date-string | даты без кавычек; «..1944» → только год + пояснение в note           |
 | burial_state                                                       | string      | состояние захоронения                                                |
-| graves_count, buried_total                                         | number      | числа из CSV                                                         |
+| graves_count, buried_total                                         | string \| number | числа из CSV; OBD может давать текст («неизвестно», «более 3000») — храним как есть |
 | buried_known, buried_unknown                                       | string      | известные/неизвестные (OBD даёт то числа, то пустые)                 |
 | sponsor                                                            | string      | шеф / балансодержатель                                               |
 | units, sources_authors                                             | array       | связи с units.yaml / authors.yaml                                    |

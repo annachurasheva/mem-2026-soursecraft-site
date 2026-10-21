@@ -162,8 +162,15 @@ const cemeterySchema = z.object({
   date_created: isoDate(),
   date_last_burial: isoDate(),
   burial_state: z.string().optional(),
-  graves_count: z.number().int().optional(),
-  buried_total: z.number().int().optional(),
+  // OBD отдаёт текстовые позиции («неизвестно», «более 3000») — допускаем строку ИЛИ число.
+  graves_count: z.preprocess(
+    val => (typeof val === 'number' ? String(val) : val),
+    z.union([z.string(), z.number().int()]).optional(),
+  ),
+  buried_total: z.preprocess(
+    val => (typeof val === 'number' ? String(val) : val),
+    z.union([z.string(), z.number().int()]).optional(),
+  ),
   buried_known: z.preprocess(
     val => (typeof val === 'number' ? String(val) : val),
     z.string().optional(),

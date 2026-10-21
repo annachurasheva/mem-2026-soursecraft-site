@@ -74,3 +74,432 @@
   license_note: ''
   access: публичный
   note: 'образец-заготовка из CSV memorial_objects-2026-10-10; сверка с реестром ОКН — отдельно; [Минцифры] ссылка OBD требует российский корневой сертификат'
+
+# --- Кладбище/объект: с. Каменка, братская могила советских воинов (82-398/2014) ---
+- id: leninskiy-kamenka-82-398-2014
+  name: Братская могила советских воинов, с. Каменка
+  type: братская могила советских воинов
+  country: Россия
+  region: Республика Крым
+  location: 'Ленинский р-н, Семисотский с/с, с. Каменка, в 5 км на запад, возле крепости Арабат'
+  coordinates: ''
+  protection_status: ''
+  passport_number: 82-398/2014
+  obd_document_id: 33125696
+  primary_burial_object: ''
+  rebural_from: ''
+  date_created: 1944-01-01
+  date_last_burial: 1944-01-01
+  burial_state: удовлетворительное
+  graves_count: 1
+  buried_total: 19
+  buried_known: '0'
+  buried_unknown: '19'
+  sponsor: Исполнительный комитет Семисотского с/с
+  units: []
+  sources_authors: []
+  url: https://obd-memorial.ru/html/info.htm?id=33125696
+  schema_type: Place
+  sameAs: []
+  image: ''
+  license_note: ''
+  access: публичный
+  note: 'данные OBD memorial_objects-2026-10-10 (Ленинский р-н); даты по OBD: __.__.1944 (день неизвестен, указано 1944-01-01); [Минцифры] ссылка OBD требует российский корневой сертификат'
+
+# --- Кладбище/объект: с. Каменское, братское кладбище советских воинов (82-388/2014) ---
+- id: leninskiy-kamenskoe-82-388-2014
+  name: Братское кладбище советских воинов, с. Каменское
+  type: братское кладбище советских воинов
+  country: Россия
+  region: Республика Крым
+  location: 'Ленинский р-н, Семисотский с/с, с. Каменское, северная часть, берег Азовского моря'
+  coordinates: ''
+  protection_status: ''
+  passport_number: 82-388/2014
+  obd_document_id: 33125107
+  primary_burial_object: ''
+  rebural_from: ''
+  date_created: 1941-01-01
+  date_last_burial: 1944-01-01
+  burial_state: удовлетворительное
+  buried_total: 'более 3000'
+  buried_known: '97'
+  buried_unknown: 'более 2903'
+  sponsor: Исполнительный комитет Семисотского с/с
+  units: []
+  sources_authors: []
+  url: https://obd-memorial.ru/html/info.htm?id=33125107
+  schema_type: Place
+  sameAs: []
+  image: ''
+  license_note: ''
+  access: публичный
+  note: 'данные OBD memorial_objects-2026-10-10 (Ленинский р-н); число могил по OBD: неизвестно; даты по OBD: __.__.1941 / __.__.1944 (день неизвестен, указано 1941-01-01 / 1944-01-01); [Минцифры] ссылка OBD требует российский корневой сертификат'
+
+# --- Кладбище/объект: с. Соляное, братская могила и памятный знак (82-397/2014) ---
+- id: leninskiy-solyanoe-82-397-2014
+  name: Братская могила советских воинов и памятный знак в честь воинов-односельчан, погибших в годы ВОВ, с. Соляное
+  type: братская могила советских воинов и памятный знак в честь воинов-односельчан, погибших в годы ВОВ
+  country: Россия
+  region: Республика Крым
+  location: 'Ленинский р-н, Семисотский с/с, с. Соляное, вблизи дороги на Каменское'
+  coordinates: ''
+  protection_status: ''
+  passport_number: 82-397/2014
+  obd_document_id: 33125693
+  primary_burial_object: ''
+  rebural_from: ''
+  date_created: 1942-01-01
+  date_last_burial: 1944-01-01
+  burial_state: удовлетворительное
+  graves_count: 1
+  buried_known: '0'
+  buried_unknown: 'неизвестно'
+  sponsor: Исполнительный комитет Семисотского с/с
+  units: []
+  sources_authors: []
+  url: https://obd-memorial.ru/html/info.htm?id=33125693
+  schema_type: Place
+  sameAs: []
+  image: ''
+  license_note: ''
+  access: публичный
+  note: 'данные OBD memorial_objects-2026-10-10 (Ленинский р-н); всего захоронено по OBD: неизвестно; даты по OBD: __.__.1942 / __.__.1944 (день неизвестен, указано 1942-01-01 / 1944-01-01); [Минцифры] ссылка OBD требует российский корневой сертификат'
+
+# --- Кладбище/объект: с. Семисотка, группа могил советских воинов (82-387/2014) ---
+- id: leninskiy-semisotka-82-387-2014
+  name: Группа могил советских воинов, с. Семисотка
+  type: группа могил советских воинов
+  country: Россия
+  region: Республика Крым
+  location: 'Ленинский р-н, Семисотский с/с, с. Семисотка, пер. Почтовый'
+  coordinates: ''
+  protection_status: ''
+  passport_number: 82-387/2014
+  obd_document_id: 33125000
+  primary_burial_object: ''
+  rebural_from: ''
+  date_created: 1942-01-01
+  date_last_burial: 1942-01-01
+  burial_state: неудовлетворительное
+  graves_count: 6
+  buried_total: 702
+  buried_known: '102'
+  buried_unknown: '600'
+  sponsor: Исполнительный комитет Семисотского с/с
+  units: []
+  sources_authors: []
+  url: https://obd-memorial.ru/html/info.htm?id=33125000
+  schema_type: Place
+  sameAs: []
+  image: ''
+  license_note: ''
+  access: публичный
+  note: 'данные OBD memorial_objects-2026-10-10 (Ленинский р-н); даты по OBD: __.__.1942 (день неизвестен, указано 1942-01-01); [Минцифры] ссылка OBD требует российский корневой сертификат'
+
+# --- Кладбище/объект: с. Семисотка, ж/д станция Петрово, братская могила (82-395/2014) ---
+- id: leninskiy-semisotka-petrovo-82-395-2014
+  name: Братская могила советских воинов, с. Семисотка, ж/д станция Петрово
+  type: братская могила советских воинов
+  country: Россия
+  region: Республика Крым
+  location: 'Ленинский р-н, Семисотский с/с, с. Семисотка, железнодорожная станция Петрово, возле здания станции'
+  coordinates: ''
+  protection_status: ''
+  passport_number: 82-395/2014
+  obd_document_id: 33125550
+  primary_burial_object: ''
+  rebural_from: ''
+  date_created: 1942-01-01
+  date_last_burial: 1944-01-01
+  burial_state: удовлетворительное
+  graves_count: 1
+  buried_total: 156
+  buried_known: '151'
+  buried_unknown: '5'
+  sponsor: Исполнительный комитет Семисотского с/с
+  units: []
+  sources_authors: []
+  url: https://obd-memorial.ru/html/info.htm?id=33125550
+  schema_type: Place
+  sameAs: []
+  image: ''
+  license_note: ''
+  access: публичный
+  note: 'данные OBD memorial_objects-2026-10-10 (Ленинский р-н); даты по OBD: __.__.1942 / __.__.1944 (день неизвестен, указано 1942-01-01 / 1944-01-01); [Минцифры] ссылка OBD требует российский корневой сертификат'
+
+# --- Кладбище/объект: с. Каменское, северо-восточная часть, братская могила (82-389/2014) ---
+- id: leninskiy-kamenskoe-82-389-2014
+  name: Братская могила советских воинов, с. Каменское
+  type: братская могила советских воинов
+  country: Россия
+  region: Республика Крым
+  location: 'Ленинский р-н, Семисотский с/с, с. Каменское, северо-восточная часть, берег Азовского моря'
+  coordinates: ''
+  protection_status: ''
+  passport_number: 82-389/2014
+  obd_document_id: 33125209
+  primary_burial_object: ''
+  rebural_from: ''
+  date_created: 1942-01-01
+  date_last_burial: 1944-01-01
+  burial_state: удовлетворительное
+  graves_count: 1
+  buried_total: 528
+  buried_known: '12'
+  buried_unknown: '516'
+  sponsor: Исполнительный комитет Семисотского с/с
+  units: []
+  sources_authors: []
+  url: https://obd-memorial.ru/html/info.htm?id=33125209
+  schema_type: Place
+  sameAs: []
+  image: ''
+  license_note: ''
+  access: публичный
+  note: 'данные OBD memorial_objects-2026-10-10 (Ленинский р-н); даты по OBD: __.__.1942 / __.__.1944 (день неизвестен, указано 1942-01-01 / 1944-01-01); [Минцифры] ссылка OBD требует российский корневой сертификат'
+
+# --- Кладбище/объект: с. Каменское, братская могила советских воинов (82-399/2014) ---
+- id: leninskiy-kamenskoe-82-399-2014
+  name: Братская могила советских воинов, с. Каменское
+  type: братская могила советских воинов
+  country: Россия
+  region: Республика Крым
+  location: 'Ленинский р-н, Семисотский с/с, с. Каменское'
+  coordinates: ''
+  protection_status: ''
+  passport_number: 82-399/2014
+  obd_document_id: 33125699
+  primary_burial_object: ''
+  rebural_from: ''
+  date_created: 1942-01-01
+  date_last_burial: 1944-01-01
+  burial_state: удовлетворительное
+  graves_count: 1
+  buried_total: 13
+  buried_known: '13'
+  buried_unknown: '0'
+  sponsor: Исполнительный комитет Семисотского с/с
+  units: []
+  sources_authors: []
+  url: https://obd-memorial.ru/html/info.htm?id=33125699
+  schema_type: Place
+  sameAs: []
+  image: ''
+  license_note: ''
+  access: публичный
+  note: 'данные OBD memorial_objects-2026-10-10 (Ленинский р-н); даты по OBD: __.__.1942 / __.__.1944 (день неизвестен, указано 1942-01-01 / 1944-01-01); [Минцифры] ссылка OBD требует российский корневой сертификат'
+
+# --- Кладбище/объект: с. Фронтовое, братская могила советских воинов (82-391/2014) ---
+- id: leninskiy-frontovoe-82-391-2014
+  name: Братская могила советских воинов, с. Фронтовое
+  type: братская могила советских воинов
+  country: Россия
+  region: Республика Крым
+  location: 'Ленинский р-н, Семисотский с/с, с. Фронтовое'
+  coordinates: ''
+  protection_status: ''
+  passport_number: 82-391/2014
+  obd_document_id: 33125288
+  primary_burial_object: ''
+  rebural_from: ''
+  date_created: 1942-01-01
+  date_last_burial: 1944-01-01
+  burial_state: удовлетворительное
+  graves_count: 1
+  buried_total: 3030
+  buried_known: '46'
+  buried_unknown: '2984'
+  sponsor: Исполнительный комитет Семисотского с/с
+  units: []
+  sources_authors: []
+  url: https://obd-memorial.ru/html/info.htm?id=33125288
+  schema_type: Place
+  sameAs: []
+  image: ''
+  license_note: ''
+  access: публичный
+  note: 'данные OBD memorial_objects-2026-10-10 (Ленинский р-н); даты по OBD: __.__.1942 / __.__.1944 (день неизвестен, указано 1942-01-01 / 1944-01-01); [Минцифры] ссылка OBD требует российский корневой сертификат'
+
+# --- Кладбище/объект: с. Фронтовое (бывшее с. Хомогорка), братская могила (82-392/2014) ---
+- id: leninskiy-frontovoe-homogorka-82-392-2014
+  name: Братская могила советских воинов, с. Фронтовое (бывшее с. Хомогорка)
+  type: братская могила советских воинов
+  country: Россия
+  region: Республика Крым
+  location: 'Ленинский р-н, Семисотский с/с, с. Фронтовое (бывшее с. Хомогорка), 2 км восточнее'
+  coordinates: ''
+  protection_status: ''
+  passport_number: 82-392/2014
+  obd_document_id: 33125338
+  primary_burial_object: ''
+  rebural_from: ''
+  date_created: 1942-01-01
+  date_last_burial: 1944-01-01
+  burial_state: удовлетворительное
+  graves_count: 1
+  buried_total: 760
+  buried_known: '120'
+  buried_unknown: '640'
+  sponsor: Исполнительный комитет Семисотского с/с
+  units: []
+  sources_authors: []
+  url: https://obd-memorial.ru/html/info.htm?id=33125338
+  schema_type: Place
+  sameAs: []
+  image: ''
+  license_note: ''
+  access: публичный
+  note: 'данные OBD memorial_objects-2026-10-10 (Ленинский р-н); даты по OBD: __.__.1942 / __.__.1944 (день неизвестен, указано 1942-01-01 / 1944-01-01); [Минцифры] ссылка OBD требует российский корневой сертификат'
+
+# --- Кладбище/объект: с. Фронтовое, севернее, братское кладбище (82-390/2014) ---
+- id: leninskiy-frontovoe-82-390-2014
+  name: Братское кладбище советских воинов, с. Фронтовое
+  type: братское кладбище советских воинов
+  country: Россия
+  region: Республика Крым
+  location: 'Ленинский р-н, Семисотский с/с, с. Фронтовое, севернее, 1,3 км'
+  coordinates: ''
+  protection_status: ''
+  passport_number: 82-390/2014
+  obd_document_id: 33125225
+  primary_burial_object: ''
+  rebural_from: ''
+  date_created: 1942-01-01
+  date_last_burial: 1944-04-01
+  burial_state: удовлетворительное
+  buried_total: 3310
+  buried_known: '59'
+  buried_unknown: '3251'
+  sponsor: Исполнительный комитет Семисотского с/с
+  units: []
+  sources_authors: []
+  url: https://obd-memorial.ru/html/info.htm?id=33125225
+  schema_type: Place
+  sameAs: []
+  image: ''
+  license_note: ''
+  access: публичный
+  note: 'данные OBD memorial_objects-2026-10-10 (Ленинский р-н); число могил по OBD: неизвестно; даты по OBD: __.01.1942 / __.04.1944 (день неизвестен, указано 1942-01-01 / 1944-04-01); [Минцифры] ссылка OBD требует российский корневой сертификат'
+
+# --- Кладбище/объект: с. Фронтовое, южная окраина, братская могила (82-396/2014) ---
+- id: leninskiy-frontovoe-82-396-2014
+  name: Братская могила советских воинов, с. Фронтовое
+  type: братская могила советских воинов
+  country: Россия
+  region: Республика Крым
+  location: 'Ленинский р-н, Семисотский с/с, с. Фронтовое, южная окраина села, возле дамбы'
+  coordinates: ''
+  protection_status: ''
+  passport_number: 82-396/2014
+  obd_document_id: 33125680
+  primary_burial_object: ''
+  rebural_from: ''
+  date_created: 1941-01-01
+  date_last_burial: 1945-01-01
+  burial_state: удовлетворительное
+  graves_count: 1
+  buried_known: '9'
+  buried_unknown: 'неизвестно'
+  sponsor: Исполнительный комитет Семисотского с/с
+  units: []
+  sources_authors: []
+  url: https://obd-memorial.ru/html/info.htm?id=33125680
+  schema_type: Place
+  sameAs: []
+  image: ''
+  license_note: ''
+  access: публичный
+  note: 'данные OBD memorial_objects-2026-10-10 (Ленинский р-н); всего захоронено по OBD: неизвестно; даты по OBD: __.__.1941 / __.__.1945 (день неизвестен, указано 1941-01-01 / 1945-01-01); [Минцифры] ссылка OBD требует российский корневой сертификат'
+
+# --- Кладбище/объект: с. Ячменное, братская могила советских воинов (82-394/2014) ---
+- id: leninskiy-yachmennoe-82-394-2014
+  name: Братская могила советских воинов, с. Ячменное
+  type: братская могила советских воинов
+  country: Россия
+  region: Республика Крым
+  location: 'Ленинский р-н, Батальненский с/с, с. Ячменное'
+  coordinates: ''
+  protection_status: ''
+  passport_number: 82-394/2014
+  obd_document_id: 33125487
+  primary_burial_object: ''
+  rebural_from: ''
+  date_created: ''
+  date_last_burial: ''
+  burial_state: удовлетворительное
+  graves_count: 1
+  buried_total: 640
+  buried_known: '59'
+  buried_unknown: '581'
+  sponsor: Исполнительный комитет Батальненского с/с
+  units: []
+  sources_authors: []
+  url: https://obd-memorial.ru/html/info.htm?id=33125487
+  schema_type: Place
+  sameAs: []
+  image: ''
+  license_note: ''
+  access: публичный
+  note: 'данные OBD memorial_objects-2026-10-10 (Ленинский р-н); даты создания и последнего захоронения по OBD не указаны; [Минцифры] ссылка OBD требует российский корневой сертификат'
+
+# --- Кладбище/объект: с. Южное, братская могила советских воинов (82-393/2014) ---
+- id: leninskiy-yuzhnoe-82-393-2014
+  name: Братская могила советских воинов, с. Южное
+  type: братская могила советских воинов
+  country: Россия
+  region: Республика Крым
+  location: 'Ленинский р-н, Батальненский с/с, с. Южное'
+  coordinates: ''
+  protection_status: ''
+  passport_number: 82-393/2014
+  obd_document_id: 33125463
+  primary_burial_object: ''
+  rebural_from: ''
+  date_created: ''
+  date_last_burial: ''
+  burial_state: удовлетворительное
+  graves_count: 1
+  buried_total: 21
+  buried_known: '20'
+  buried_unknown: '1'
+  sponsor: Исполнительный комитет Батальненского с/с
+  units: []
+  sources_authors: []
+  url: https://obd-memorial.ru/html/info.htm?id=33125463
+  schema_type: Place
+  sameAs: []
+  image: ''
+  license_note: ''
+  access: публичный
+  note: 'данные OBD memorial_objects-2026-10-10 (Ленинский р-н); даты создания и последнего захоронения по OBD не указаны; [Минцифры] ссылка OBD требует российский корневой сертификат'
+
+# --- Кладбище/объект: с. Шубино, памятный знак в честь воинов-односельчан (82-319) ---
+- id: kirovskiy-shubino-82-319
+  name: Памятный знак в честь воинов-односельчан, с. Шубино
+  type: памятный знак в честь воинов-односельчан
+  country: Россия
+  region: Республика Крым
+  location: 'Кировский р-н, с. Шубино, ул. Ленино'
+  coordinates: ''
+  protection_status: ''
+  passport_number: 82-319
+  obd_document_id: 33123905
+  primary_burial_object: ''
+  rebural_from: ''
+  date_created: 1941-01-01
+  date_last_burial: 1945-01-01
+  burial_state: ''
+  buried_total: 42
+  buried_known: '0'
+  buried_unknown: '42'
+  sponsor: Токаревский сельский совет
+  units: []
+  sources_authors: []
+  url: https://obd-memorial.ru/html/info.htm?id=33123905
+  schema_type: Place
+  sameAs: []
+  image: ''
+  license_note: ''
+  access: публичный
+  note: 'данные OBD memorial_objects-2026-10-10 (Кировский р-н); число могил по OBD: неизвестно; состояние по OBD: не указано; даты по OBD: __.__.1941 / __.__.1945 (день неизвестен, указано 1941-01-01 / 1945-01-01); [Минцифры] ссылка OBD требует российский корневой сертификат'

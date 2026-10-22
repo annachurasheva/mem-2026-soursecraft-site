@@ -28,6 +28,85 @@
 # добавляем изолированные надстройки (аддоны).
 # ============================================================
 
+# --- Персона: Алексей Валерьевич Исаев ---
+- id: isaev-a-v
+  name: Исаев Алексей Валерьевич
+  type: персона
+  credentials: кандидат исторических наук, руководитель направления ПАО «Вымпелком», военный историк
+  access: публичный
+  license_note: ''
+  link: ''
+  note: 'род. 15.08.1974, Ташкент; военный историк (Москва); e-mail: alex.v.isaev@gmail.com; автор статьи «Крымская ошибка Манштейна» («Военно-исторический журнал», history.ric.mil.ru, 30.03.2016)'
+  url: ''
+  sameAs:
+    - https://ru.wikipedia.org/wiki/Исаев,_Алексей_Валерьевич
+  image: ''
+  jobTitle: руководитель направления ПАО «Вымпелком»
+  affiliation: ПАО «Вымпелком»
+  schema_type: Person
+  legal_name: ''
+  alternate_name: []
+  founding_date: ''
+  dissolution_date: ''
+  successor: ''
+  predecessor: []
+  parent_organization: ''
+  location: Москва
+
+# --- Редакция: журнал «Военно-исторический журнал» (history.ric.mil.ru) ---
+- id: voenno-istoricheskiy-zhurnal
+  name: Журнал «Военно-исторический журнал» (history.ric.mil.ru)
+  type: редакция
+  credentials: ''
+  access: публичный
+  license_note: ''
+  link: https://history.ric.mil.ru
+  note: 'ежемесячное издание Министерства обороны Российской Федерации, выходит с 1939 года; ISSN 0321-0626; издатель и правообладатель — ФГБУ «РИЦ «Красная звезда» Минобороны России (см. запись ric-krasnaya-zvezda); © ФГБУ «РИЦ «Красная звезда» Минобороны России'
+  url: https://history.ric.mil.ru
+  sameAs:
+    - https://ru.wikipedia.org/wiki/Военно-исторический_журнал
+  image: ''
+  jobTitle: ''
+  affiliation: ''
+  schema_type: Organization
+  legal_name: ''
+  alternate_name:
+    - ВИЖ
+    - history.ric.mil.ru
+  founding_date: ''
+  dissolution_date: ''
+  successor: ''
+  predecessor: []
+  parent_organization: ФГБУ «Редакционно-издательский центр «Красная звезда» Министерства обороны Российской Федерации
+  location: Москва
+
+# --- Редакция: ФГБУ «РИЦ «Красная звезда» Минобороны России (ric.mil.ru) ---
+- id: ric-krasnaya-zvezda
+  name: ФГБУ «Редакционно-издательский центр «Красная звезда» Министерства обороны Российской Федерации
+  type: редакция
+  credentials: ''
+  access: публичный
+  license_note: ''
+  link: https://ric.mil.ru
+  note: 'официальный сайт Редакционно-издательского центра Минобороны России (ric.mil.ru); издаёт газету «Красная звезда» (создана по решению Политбюро ЦК РКП(б) от 29 ноября 1923 г.) и другие периодические издания МО РФ; юрлицо зарегистрировано 01.07.1999; тел.: +7 (495) 941-23-80'
+  url: https://ric.mil.ru
+  sameAs:
+    - https://vk.ru/ric_mil_ru
+  image: ''
+  jobTitle: ''
+  affiliation: ''
+  schema_type: Organization
+  legal_name: Федеральное государственное бюджетное учреждение «Редакционно-издательский центр «Красная звезда» Министерства обороны Российской Федерации
+  alternate_name:
+    - РИЦ «Красная звезда» Минобороны России
+    - ric.mil.ru
+  founding_date: 1999-07-01
+  dissolution_date: ''
+  successor: ''
+  predecessor: []
+  parent_organization: Министерство обороны Российской Федерации
+  location: '125284, Москва, Хорошёвское ш., д. 38'
+
 # --- Редакция: интернет-издание Bospor.com.ua (2008) ---
 - id: redaktsiya
   name: Редакция (интернет-издание Bospor.com.ua)

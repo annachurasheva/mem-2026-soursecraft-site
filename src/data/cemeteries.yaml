@@ -4,8 +4,8 @@
 # захоронений: воинские кладбища, братские могилы, некрополи,
 # паспорта объектов культурного наследия, координаты, охранные статусы.
 #
-# СТАТУС: файл-заготовка. Коллекция `cemeteries` ещё НЕ зарегистрирована
-# в src/content.config.ts — этот файл сейчас игнорируется сборкой.
+# СТАТУС: файл-заготовка. Коллекция `cemeteries`  зарегистрирована
+# в src/content.config.ts —
 # Активация = изолированный аддон (см. docs/REGISTRIES-GUIDE.md, раздел 5).
 #
 # ИСТОЧНИК ДАННЫХ:
@@ -46,29 +46,29 @@
 # --- Кладбище/объект: с. Трудовое, могила и памятный знак (ЗАГОТОВКА-ОБРАЗЕЦ) ---
 # Скопируйте этот блок для каждой новой записи из CSV memorial_objects.
 - id: simferopolskiy-trudovoe
-  name: Могила и памятный знак, с. Трудовое   # официальное/учётное название объекта
-  type: могила и памятный знак                # братская могила | некрополь | кладбище | могила | мемориальный комплекс | ...
-  country: Россия                             # колонка country_burial
-  region: Республика Крым                     # колонка region_burial
-  location: 'Симферопольский р-н, с.п. Трудовское, с. Трудовое, Дом культуры, около'  # current_burial (полная привязка)
-  coordinates: ''                             # '44.9xxx, 34.1xxx' — широта, долгота; пусто, пока нет данных
-  protection_status: ''                       # охранный статус ОКН (рег./фед., не охраняется) — из реестра ОКН
-  passport_number: 82-289/2023                # vmc_number — номер учёта ВМС (строка! слэш ломает чистый YAML-числовой стиль)
-  obd_document_id: 2005950832                 # document_id из OBD Memorial — якорь для перепроверки
-  primary_burial_object: ''                   # если первичное захоронение — другой объект (id из этого реестра)
-  rebural_from: ''                            # откуда перенесено (rebural_from из CSV)
-  date_created: ''                            # дата создания захоронения, ISO без кавычек
-  date_last_burial: ''                        # дата последнего захоронения, ISO без кавычек
-  burial_state: удовлетворительное            # состояние (колонка burial_state)
-  graves_count: 1                             # number — учтённые могилы
-  buried_total: 1                             # number — всего захоронено
-  buried_known: ''                            # string — известных (OBD даёт то числа, то пустые)
-  buried_unknown: '1'                         # string — неизвестных
-  sponsor: Администрация с.п. Трудовское Симферопольского р-на  # шеф/балансодержатель
-  units: []                                   # массив id соединений из units.yaml (кто здесь захоронен)
-  sources_authors: []                         # массив id авторов/источников из authors.yaml
-  url: https://obd-memorial.ru/html/info.htm?id=2005950832       # primary_url
-  schema_type: Place                          # техническая схема Schema.org (Place/CemeteryPlot)
+  name: Могила и памятный знак, с. Трудовое # официальное/учётное название объекта
+  type: могила и памятный знак # братская могила | некрополь | кладбище | могила | мемориальный комплекс | ...
+  country: Россия # колонка country_burial
+  region: Республика Крым # колонка region_burial
+  location: 'Симферопольский р-н, с.п. Трудовское, с. Трудовое, Дом культуры, около' # current_burial (полная привязка)
+  coordinates: '' # '44.9xxx, 34.1xxx' — широта, долгота; пусто, пока нет данных
+  protection_status: '' # охранный статус ОКН (рег./фед., не охраняется) — из реестра ОКН
+  passport_number: 82-289/2023 # vmc_number — номер учёта ВМС (строка! слэш ломает чистый YAML-числовой стиль)
+  obd_document_id: 2005950832 # document_id из OBD Memorial — якорь для перепроверки
+  primary_burial_object: '' # если первичное захоронение — другой объект (id из этого реестра)
+  rebural_from: '' # откуда перенесено (rebural_from из CSV)
+  date_created: '' # дата создания захоронения, ISO без кавычек
+  date_last_burial: '' # дата последнего захоронения, ISO без кавычек
+  burial_state: удовлетворительное # состояние (колонка burial_state)
+  graves_count: 1 # number — учтённые могилы
+  buried_total: 1 # number — всего захоронено
+  buried_known: '' # string — известных (OBD даёт то числа, то пустые)
+  buried_unknown: '1' # string — неизвестных
+  sponsor: Администрация с.п. Трудовское Симферопольского р-на # шеф/балансодержатель
+  units: [] # массив id соединений из units.yaml (кто здесь захоронен)
+  sources_authors: [] # массив id авторов/источников из authors.yaml
+  url: https://obd-memorial.ru/html/info.htm?id=2005950832 # primary_url
+  schema_type: Place # техническая схема Schema.org (Place/CemeteryPlot)
   sameAs: []
   image: ''
   license_note: ''
@@ -122,10 +122,10 @@
   date_created: '1941'
   date_last_burial: '1944'
   burial_state: удовлетворительное
-  graves_count: 'неизвестно'
-  buried_total: 'более 3000'
+  graves_count: неизвестно
+  buried_total: более 3000
   buried_known: '97'
-  buried_unknown: 'более 2903'
+  buried_unknown: более 2903
   sponsor: Исполнительный комитет Семисотского с/с
   units: []
   sources_authors: []
@@ -154,9 +154,9 @@
   date_last_burial: '1944'
   burial_state: удовлетворительное
   graves_count: 1
-  buried_total: 'неизвестно'
+  buried_total: неизвестно
   buried_known: '0'
-  buried_unknown: 'неизвестно'
+  buried_unknown: неизвестно
   sponsor: Исполнительный комитет Семисотского с/с
   units: []
   sources_authors: []
@@ -367,10 +367,10 @@
   obd_document_id: 33125225
   primary_burial_object: ''
   rebural_from: ''
-  date_created: '1942-01'
-  date_last_burial: '1944-04'
+  date_created: 1942-01
+  date_last_burial: 1944-04
   burial_state: удовлетворительное
-  graves_count: 'неизвестно'
+  graves_count: неизвестно
   buried_total: 3310
   buried_known: '59'
   buried_unknown: '3251'
@@ -402,9 +402,9 @@
   date_last_burial: '1945'
   burial_state: удовлетворительное
   graves_count: 1
-  buried_total: 'неизвестно'
+  buried_total: неизвестно
   buried_known: '9'
-  buried_unknown: 'неизвестно'
+  buried_unknown: неизвестно
   sponsor: Исполнительный комитет Семисотского с/с
   units: []
   sources_authors: []
@@ -494,7 +494,7 @@
   date_created: '1941'
   date_last_burial: '1945'
   burial_state: ''
-  graves_count: 'неизвестно'
+  graves_count: неизвестно
   buried_total: 42
   buried_known: '0'
   buried_unknown: '42'
